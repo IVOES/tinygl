@@ -1,0 +1,2690 @@
+include-demo/stringutil.h:341:21: warning: Identical inner 'if' condition is always true. [identicalInnerCondition]
+   doescape=1;{if(i <= lenin) c = inbuf[i++]; else {goto end;}};continue;
+                    ^
+include-demo/stringutil.h:339:9: note: outer condition: i<=lenin
+ while(i<=lenin){
+        ^
+include-demo/stringutil.h:341:21: note: identical inner condition: i<=lenin
+   doescape=1;{if(i <= lenin) c = inbuf[i++]; else {goto end;}};continue;
+                    ^
+include-demo/stringutil.h:365:23: warning: Identical inner 'if' condition is always true. [identicalInnerCondition]
+   if(i<=lenin) {if(i <= lenin) c = inbuf[i++]; else {goto end;}};
+                      ^
+include-demo/stringutil.h:365:8: note: outer condition: i<=lenin
+   if(i<=lenin) {if(i <= lenin) c = inbuf[i++]; else {goto end;}};
+       ^
+include-demo/stringutil.h:365:23: note: identical inner condition: i<=lenin
+   if(i<=lenin) {if(i <= lenin) c = inbuf[i++]; else {goto end;}};
+                      ^
+include-demo/stringutil.h:131:44: style: Condition '!buf' is always false [knownConditionTrueFalse]
+ strcatallocf1(buf, replacewith);       if(!buf) goto error;
+                                           ^
+include-demo/stringutil.h:129:53: note: Assuming that condition '!buf' is not redundant
+ buf = str_null_terminated_alloc(*inbuf, loc);   if(!buf) goto error;
+                                                    ^
+include-demo/stringutil.h:131:44: note: Condition '!buf' is always false
+ strcatallocf1(buf, replacewith);       if(!buf) goto error;
+                                           ^
+include-demo/stringutil.h:133:60: style: Condition '!buf' is always false [knownConditionTrueFalse]
+ strcatallocf1(buf,(*inbuf) + loc + strlen(replaceme)); if(!buf) goto error;
+                                                           ^
+include-demo/stringutil.h:131:44: note: Assuming that condition '!buf' is not redundant
+ strcatallocf1(buf, replacewith);       if(!buf) goto error;
+                                           ^
+include-demo/stringutil.h:133:60: note: Condition '!buf' is always false
+ strcatallocf1(buf,(*inbuf) + loc + strlen(replaceme)); if(!buf) goto error;
+                                                           ^
+include-demo/stringutil.h:299:8: style: Condition 'i<=lenin' is always true [knownConditionTrueFalse]
+ {if(i <= lenin) c = inbuf[i++]; else {goto end;}}; /*has to occur before the loop.*/
+       ^
+include-demo/stringutil.h:293:12: note: Assuming that condition 'lenin<3' is not redundant
+  if(lenin < 3) {
+           ^
+include-demo/stringutil.h:299:8: note: Condition 'i<=lenin' is always true
+ {if(i <= lenin) c = inbuf[i++]; else {goto end;}}; /*has to occur before the loop.*/
+       ^
+include-demo/stringutil.h:301:3: error: Common realloc mistake: 'tokens' nulled but not freed upon failure [memleakOnRealloc]
+  tokens = STRUTIL_REALLOC(tokens, ntokens * 2 * sizeof(char*));
+  ^
+include-demo/stringutil.h:145:7: style: The scope of the variable 'c' can be reduced. [variableScope]
+ char c;
+      ^
+include-demo/stringutil.h:162:7: style: The scope of the variable 'c' can be reduced. [variableScope]
+ char c;
+      ^
+Raw_Demos/bigfont.c:11:9: style: The scope of the variable 'set' can be reduced. [variableScope]
+    int set;
+        ^
+include-demo/stringutil.h:345:20: style: Local variable 'l' shadows outer variable [shadowVariable]
+   unsigned long t,l = 0;
+                   ^
+include-demo/stringutil.h:279:27: note: Shadowed declaration
+ char c; unsigned long vv,l,i = 2;
+                          ^
+include-demo/stringutil.h:345:20: note: Shadow variable
+   unsigned long t,l = 0;
+                   ^
+Raw_Demos/gears.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 19 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+include-demo/stb_image_write.h:1378:16: style: Array index 'i' is used before limits check. [arrayIndexThenCheck]
+      for (; DU[i]==0 && i<=end0pos; ++i) {
+               ^
+include-demo/stb_image_write.h:1068:42: warning: The address of local variable 'o' might be accessed at non-zero index. [objectIndex]
+      crc = (crc >> 8) ^ crc_table[buffer[i] ^ (crc & 0xff)];
+                                         ^
+include-demo/stb_image_write.h:1196:17: note: Address of variable taken here.
+   stbiw__wpcrc(&o,13);
+                ^
+include-demo/stb_image_write.h:1196:17: note: Calling function 'stbiw__wpcrc', 1st argument '&o' value is lifetime=o
+   stbiw__wpcrc(&o,13);
+                ^
+include-demo/stb_image_write.h:1079:48: note: Calling function 'stbiw__crc32', 1st argument '*data-len-4' value is lifetime=o
+   unsigned int crc = stbiw__crc32(*data - len - 4, len+4);
+                                               ^
+include-demo/stb_image_write.h:1068:42: note: The address of local variable 'o' might be accessed at non-zero index.
+      crc = (crc >> 8) ^ crc_table[buffer[i] ^ (crc & 0xff)];
+                                         ^
+include-demo/stb_image_write.h:1080:4: error: The address of local variable 'o' is accessed at non-zero index. [objectIndex]
+   stbiw__wp32(*data, crc);
+   ^
+include-demo/stb_image_write.h:1196:17: note: Address of variable taken here.
+   stbiw__wpcrc(&o,13);
+                ^
+include-demo/stb_image_write.h:1196:17: note: Calling function 'stbiw__wpcrc', 1st argument '&o' value is lifetime=o
+   stbiw__wpcrc(&o,13);
+                ^
+include-demo/stb_image_write.h:1080:4: note: The address of local variable 'o' is accessed at non-zero index.
+   stbiw__wp32(*data, crc);
+   ^
+include-demo/stb_image_write.h:1080:4: error: The address of local variable 'o' is accessed at non-zero index. [objectIndex]
+   stbiw__wp32(*data, crc);
+   ^
+include-demo/stb_image_write.h:1203:17: note: Address of variable taken here.
+   stbiw__wpcrc(&o, zlen);
+                ^
+include-demo/stb_image_write.h:1203:17: note: Calling function 'stbiw__wpcrc', 1st argument '&o' value is lifetime=o
+   stbiw__wpcrc(&o, zlen);
+                ^
+include-demo/stb_image_write.h:1080:4: note: The address of local variable 'o' is accessed at non-zero index.
+   stbiw__wp32(*data, crc);
+   ^
+include-demo/stb_image_write.h:1080:4: error: The address of local variable 'o' is accessed at non-zero index. [objectIndex]
+   stbiw__wp32(*data, crc);
+   ^
+include-demo/stb_image_write.h:1207:17: note: Address of variable taken here.
+   stbiw__wpcrc(&o,0);
+                ^
+include-demo/stb_image_write.h:1207:17: note: Calling function 'stbiw__wpcrc', 1st argument '&o' value is lifetime=o
+   stbiw__wpcrc(&o,0);
+                ^
+include-demo/stb_image_write.h:1080:4: note: The address of local variable 'o' is accessed at non-zero index.
+   stbiw__wp32(*data, crc);
+   ^
+Raw_Demos/gears.c:392:9: style: Condition 'isRunning' is always true [knownConditionTrueFalse]
+ while (isRunning) {
+        ^
+Raw_Demos/gears.c:389:18: note: Assignment 'isRunning=1', assigned value is 1
+ int isRunning = 1;
+                 ^
+Raw_Demos/gears.c:392:9: note: Condition 'isRunning' is always true
+ while (isRunning) {
+        ^
+include-demo/stb_image_write.h:836:4: error: Memory leak: p [memleak]
+   return *arr;
+   ^
+include-demo/stb_image_write.h:913:4: warning: Either the condition '(out)==0' is redundant or there is possible null pointer dereference: out. [nullPointerRedundantCheck]
+   stbiw__sbpush(out, 0x78);   // DEFLATE 32K window
+   ^
+include-demo/stb_image_write.h:914:4: note: Assuming that condition '(out)==0' is not redundant
+   stbiw__sbpush(out, 0x5e);   // FLEVEL = 1
+   ^
+include-demo/stb_image_write.h:913:4: note: Null pointer dereference
+   stbiw__sbpush(out, 0x78);   // DEFLATE 32K window
+   ^
+include-demo/stb_image_write.h:926:23: warning: Either the condition 'hash_table[h]' is redundant or there is possible null pointer dereference: hlist. [nullPointerRedundantCheck]
+      unsigned char **hlist = hash_table[h];
+                      ^
+include-demo/stb_image_write.h:935:21: note: Assuming that condition 'hash_table[h]' is not redundant
+      if (hash_table[h] && stbiw__sbn(hash_table[h]) == 2*quality) {
+                    ^
+include-demo/stb_image_write.h:926:23: note: Null pointer dereference
+      unsigned char **hlist = hash_table[h];
+                      ^
+include-demo/stb_image_write.h:990:10: warning: Either the condition '(out)==0' is redundant or there is possible null pointer dereference: out. [nullPointerRedundantCheck]
+         stbiw__sbpush(out, data_len - j == blocklen); // BFINAL = ?, BTYPE = 0 -- no compression
+         ^
+include-demo/stb_image_write.h:991:10: note: Assuming that condition '(out)==0' is not redundant
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen)); // LEN
+         ^
+include-demo/stb_image_write.h:990:10: note: Null pointer dereference
+         stbiw__sbpush(out, data_len - j == blocklen); // BFINAL = ?, BTYPE = 0 -- no compression
+         ^
+include-demo/stb_image_write.h:991:10: warning: Either the condition '(out)==0' is redundant or there is possible null pointer dereference: out. [nullPointerRedundantCheck]
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen)); // LEN
+         ^
+include-demo/stb_image_write.h:992:10: note: Assuming that condition '(out)==0' is not redundant
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen >> 8));
+         ^
+include-demo/stb_image_write.h:991:10: note: Null pointer dereference
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen)); // LEN
+         ^
+include-demo/stb_image_write.h:992:10: warning: Either the condition '(out)==0' is redundant or there is possible null pointer dereference: out. [nullPointerRedundantCheck]
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen >> 8));
+         ^
+include-demo/stb_image_write.h:993:10: note: Assuming that condition '(out)==0' is not redundant
+         stbiw__sbpush(out, STBIW_UCHAR(~blocklen)); // NLEN
+         ^
+include-demo/stb_image_write.h:992:10: note: Null pointer dereference
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen >> 8));
+         ^
+include-demo/stb_image_write.h:993:10: warning: Either the condition '(out)==0' is redundant or there is possible null pointer dereference: out. [nullPointerRedundantCheck]
+         stbiw__sbpush(out, STBIW_UCHAR(~blocklen)); // NLEN
+         ^
+include-demo/stb_image_write.h:994:10: note: Assuming that condition '(out)==0' is not redundant
+         stbiw__sbpush(out, STBIW_UCHAR(~blocklen >> 8));
+         ^
+include-demo/stb_image_write.h:993:10: note: Null pointer dereference
+         stbiw__sbpush(out, STBIW_UCHAR(~blocklen)); // NLEN
+         ^
+include-demo/stb_image_write.h:1012:7: warning: Either the condition '(out)==0' is redundant or there is possible null pointer dereference: out. [nullPointerRedundantCheck]
+      stbiw__sbpush(out, STBIW_UCHAR(s2 >> 8));
+      ^
+include-demo/stb_image_write.h:1013:7: note: Assuming that condition '(out)==0' is not redundant
+      stbiw__sbpush(out, STBIW_UCHAR(s2));
+      ^
+include-demo/stb_image_write.h:1012:7: note: Null pointer dereference
+      stbiw__sbpush(out, STBIW_UCHAR(s2 >> 8));
+      ^
+include-demo/stb_image_write.h:1013:7: warning: Either the condition '(out)==0' is redundant or there is possible null pointer dereference: out. [nullPointerRedundantCheck]
+      stbiw__sbpush(out, STBIW_UCHAR(s2));
+      ^
+include-demo/stb_image_write.h:1014:7: note: Assuming that condition '(out)==0' is not redundant
+      stbiw__sbpush(out, STBIW_UCHAR(s1 >> 8));
+      ^
+include-demo/stb_image_write.h:1013:7: note: Null pointer dereference
+      stbiw__sbpush(out, STBIW_UCHAR(s2));
+      ^
+include-demo/stb_image_write.h:1014:7: warning: Either the condition '(out)==0' is redundant or there is possible null pointer dereference: out. [nullPointerRedundantCheck]
+      stbiw__sbpush(out, STBIW_UCHAR(s1 >> 8));
+      ^
+include-demo/stb_image_write.h:1015:7: note: Assuming that condition '(out)==0' is not redundant
+      stbiw__sbpush(out, STBIW_UCHAR(s1));
+      ^
+include-demo/stb_image_write.h:1014:7: note: Null pointer dereference
+      stbiw__sbpush(out, STBIW_UCHAR(s1 >> 8));
+      ^
+include-demo/stb_image_write.h:913:4: warning: Either the condition '(out)==0' is redundant or there is overflow in pointer subtraction. [nullPointerArithmeticRedundantCheck]
+   stbiw__sbpush(out, 0x78);   // DEFLATE 32K window
+   ^
+include-demo/stb_image_write.h:914:4: note: Assuming that condition '(out)==0' is not redundant
+   stbiw__sbpush(out, 0x5e);   // FLEVEL = 1
+   ^
+include-demo/stb_image_write.h:913:4: note: Null pointer subtraction
+   stbiw__sbpush(out, 0x78);   // DEFLATE 32K window
+   ^
+include-demo/stb_image_write.h:990:10: warning: Either the condition '(out)==0' is redundant or there is overflow in pointer subtraction. [nullPointerArithmeticRedundantCheck]
+         stbiw__sbpush(out, data_len - j == blocklen); // BFINAL = ?, BTYPE = 0 -- no compression
+         ^
+include-demo/stb_image_write.h:991:10: note: Assuming that condition '(out)==0' is not redundant
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen)); // LEN
+         ^
+include-demo/stb_image_write.h:990:10: note: Null pointer subtraction
+         stbiw__sbpush(out, data_len - j == blocklen); // BFINAL = ?, BTYPE = 0 -- no compression
+         ^
+include-demo/stb_image_write.h:991:10: warning: Either the condition '(out)==0' is redundant or there is overflow in pointer subtraction. [nullPointerArithmeticRedundantCheck]
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen)); // LEN
+         ^
+include-demo/stb_image_write.h:992:10: note: Assuming that condition '(out)==0' is not redundant
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen >> 8));
+         ^
+include-demo/stb_image_write.h:991:10: note: Null pointer subtraction
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen)); // LEN
+         ^
+include-demo/stb_image_write.h:992:10: warning: Either the condition '(out)==0' is redundant or there is overflow in pointer subtraction. [nullPointerArithmeticRedundantCheck]
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen >> 8));
+         ^
+include-demo/stb_image_write.h:993:10: note: Assuming that condition '(out)==0' is not redundant
+         stbiw__sbpush(out, STBIW_UCHAR(~blocklen)); // NLEN
+         ^
+include-demo/stb_image_write.h:992:10: note: Null pointer subtraction
+         stbiw__sbpush(out, STBIW_UCHAR(blocklen >> 8));
+         ^
+include-demo/stb_image_write.h:993:10: warning: Either the condition '(out)==0' is redundant or there is overflow in pointer subtraction. [nullPointerArithmeticRedundantCheck]
+         stbiw__sbpush(out, STBIW_UCHAR(~blocklen)); // NLEN
+         ^
+include-demo/stb_image_write.h:994:10: note: Assuming that condition '(out)==0' is not redundant
+         stbiw__sbpush(out, STBIW_UCHAR(~blocklen >> 8));
+         ^
+include-demo/stb_image_write.h:993:10: note: Null pointer subtraction
+         stbiw__sbpush(out, STBIW_UCHAR(~blocklen)); // NLEN
+         ^
+include-demo/stb_image_write.h:1012:7: warning: Either the condition '(out)==0' is redundant or there is overflow in pointer subtraction. [nullPointerArithmeticRedundantCheck]
+      stbiw__sbpush(out, STBIW_UCHAR(s2 >> 8));
+      ^
+include-demo/stb_image_write.h:1013:7: note: Assuming that condition '(out)==0' is not redundant
+      stbiw__sbpush(out, STBIW_UCHAR(s2));
+      ^
+include-demo/stb_image_write.h:1012:7: note: Null pointer subtraction
+      stbiw__sbpush(out, STBIW_UCHAR(s2 >> 8));
+      ^
+include-demo/stb_image_write.h:1013:7: warning: Either the condition '(out)==0' is redundant or there is overflow in pointer subtraction. [nullPointerArithmeticRedundantCheck]
+      stbiw__sbpush(out, STBIW_UCHAR(s2));
+      ^
+include-demo/stb_image_write.h:1014:7: note: Assuming that condition '(out)==0' is not redundant
+      stbiw__sbpush(out, STBIW_UCHAR(s1 >> 8));
+      ^
+include-demo/stb_image_write.h:1013:7: note: Null pointer subtraction
+      stbiw__sbpush(out, STBIW_UCHAR(s2));
+      ^
+include-demo/stb_image_write.h:1014:7: warning: Either the condition '(out)==0' is redundant or there is overflow in pointer subtraction. [nullPointerArithmeticRedundantCheck]
+      stbiw__sbpush(out, STBIW_UCHAR(s1 >> 8));
+      ^
+include-demo/stb_image_write.h:1015:7: note: Assuming that condition '(out)==0' is not redundant
+      stbiw__sbpush(out, STBIW_UCHAR(s1));
+      ^
+include-demo/stb_image_write.h:1014:7: note: Null pointer subtraction
+      stbiw__sbpush(out, STBIW_UCHAR(s1 >> 8));
+      ^
+include-demo/stb_image_write.h:420:42: style: The scope of the variable 'px' can be reduced. [variableScope]
+   unsigned char bg[3] = { 255, 0, 255}, px[3];
+                                         ^
+include-demo/stb_image_write.h:421:8: style: The scope of the variable 'k' can be reduced. [variableScope]
+   int k;
+       ^
+include-demo/stb_image_write.h:1152:61: style: The scope of the variable 'est' can be reduced. [variableScope]
+         int best_filter = 0, best_filter_val = 0x7fffffff, est, i;
+                                                            ^
+Raw_Demos/gears.c:78:10: style: The scope of the variable 'u' can be reduced. [variableScope]
+ GLfloat u, v, len;
+         ^
+Raw_Demos/gears.c:78:13: style: The scope of the variable 'v' can be reduced. [variableScope]
+ GLfloat u, v, len;
+            ^
+Raw_Demos/gears.c:78:16: style: The scope of the variable 'len' can be reduced. [variableScope]
+ GLfloat u, v, len;
+               ^
+include-demo/stb_image_write.h:262:49: style:inconclusive: Function 'stbi_flip_vertically_on_write' argument 1 names different: declaration 'flip_boolean' definition 'flag'. [funcArgNamesDifferent]
+STBIWDEF void stbi_flip_vertically_on_write(int flag)
+                                                ^
+include-demo/stb_image_write.h:195:49: note: Function 'stbi_flip_vertically_on_write' argument 1 names different: declaration 'flip_boolean' definition 'flag'.
+STBIWDEF void stbi_flip_vertically_on_write(int flip_boolean);
+                                                ^
+include-demo/stb_image_write.h:262:49: note: Function 'stbi_flip_vertically_on_write' argument 1 names different: declaration 'flip_boolean' definition 'flag'.
+STBIWDEF void stbi_flip_vertically_on_write(int flag)
+                                                ^
+include-demo/stb_image_write.h:512:79: style:inconclusive: Function 'stbi_write_bmp_to_func' argument 3 names different: declaration 'w' definition 'x'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_bmp_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data)
+                                                                              ^
+include-demo/stb_image_write.h:190:79: note: Function 'stbi_write_bmp_to_func' argument 3 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_bmp_to_func(stbi_write_func *func, void *context, int w, int h, int comp, const void  *data);
+                                                                              ^
+include-demo/stb_image_write.h:512:79: note: Function 'stbi_write_bmp_to_func' argument 3 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_bmp_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data)
+                                                                              ^
+include-demo/stb_image_write.h:512:86: style:inconclusive: Function 'stbi_write_bmp_to_func' argument 4 names different: declaration 'h' definition 'y'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_bmp_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data)
+                                                                                     ^
+include-demo/stb_image_write.h:190:86: note: Function 'stbi_write_bmp_to_func' argument 4 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_bmp_to_func(stbi_write_func *func, void *context, int w, int h, int comp, const void  *data);
+                                                                                     ^
+include-demo/stb_image_write.h:512:86: note: Function 'stbi_write_bmp_to_func' argument 4 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_bmp_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data)
+                                                                                     ^
+include-demo/stb_image_write.h:520:55: style:inconclusive: Function 'stbi_write_bmp' argument 2 names different: declaration 'w' definition 'x'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_bmp(char const *filename, int x, int y, int comp, const void *data)
+                                                      ^
+include-demo/stb_image_write.h:177:55: note: Function 'stbi_write_bmp' argument 2 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_bmp(char const *filename, int w, int h, int comp, const void  *data);
+                                                      ^
+include-demo/stb_image_write.h:520:55: note: Function 'stbi_write_bmp' argument 2 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_bmp(char const *filename, int x, int y, int comp, const void *data)
+                                                      ^
+include-demo/stb_image_write.h:520:62: style:inconclusive: Function 'stbi_write_bmp' argument 3 names different: declaration 'h' definition 'y'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_bmp(char const *filename, int x, int y, int comp, const void *data)
+                                                             ^
+include-demo/stb_image_write.h:177:62: note: Function 'stbi_write_bmp' argument 3 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_bmp(char const *filename, int w, int h, int comp, const void  *data);
+                                                             ^
+include-demo/stb_image_write.h:520:62: note: Function 'stbi_write_bmp' argument 3 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_bmp(char const *filename, int x, int y, int comp, const void *data)
+                                                             ^
+include-demo/stb_image_write.h:611:79: style:inconclusive: Function 'stbi_write_tga_to_func' argument 3 names different: declaration 'w' definition 'x'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_tga_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data)
+                                                                              ^
+include-demo/stb_image_write.h:191:79: note: Function 'stbi_write_tga_to_func' argument 3 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_tga_to_func(stbi_write_func *func, void *context, int w, int h, int comp, const void  *data);
+                                                                              ^
+include-demo/stb_image_write.h:611:79: note: Function 'stbi_write_tga_to_func' argument 3 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_tga_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data)
+                                                                              ^
+include-demo/stb_image_write.h:611:86: style:inconclusive: Function 'stbi_write_tga_to_func' argument 4 names different: declaration 'h' definition 'y'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_tga_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data)
+                                                                                     ^
+include-demo/stb_image_write.h:191:86: note: Function 'stbi_write_tga_to_func' argument 4 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_tga_to_func(stbi_write_func *func, void *context, int w, int h, int comp, const void  *data);
+                                                                                     ^
+include-demo/stb_image_write.h:611:86: note: Function 'stbi_write_tga_to_func' argument 4 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_tga_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data)
+                                                                                     ^
+include-demo/stb_image_write.h:619:55: style:inconclusive: Function 'stbi_write_tga' argument 2 names different: declaration 'w' definition 'x'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_tga(char const *filename, int x, int y, int comp, const void *data)
+                                                      ^
+include-demo/stb_image_write.h:178:55: note: Function 'stbi_write_tga' argument 2 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_tga(char const *filename, int w, int h, int comp, const void  *data);
+                                                      ^
+include-demo/stb_image_write.h:619:55: note: Function 'stbi_write_tga' argument 2 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_tga(char const *filename, int x, int y, int comp, const void *data)
+                                                      ^
+include-demo/stb_image_write.h:619:62: style:inconclusive: Function 'stbi_write_tga' argument 3 names different: declaration 'h' definition 'y'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_tga(char const *filename, int x, int y, int comp, const void *data)
+                                                             ^
+include-demo/stb_image_write.h:178:62: note: Function 'stbi_write_tga' argument 3 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_tga(char const *filename, int w, int h, int comp, const void  *data);
+                                                             ^
+include-demo/stb_image_write.h:619:62: note: Function 'stbi_write_tga' argument 3 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_tga(char const *filename, int x, int y, int comp, const void *data)
+                                                             ^
+include-demo/stb_image_write.h:787:79: style:inconclusive: Function 'stbi_write_hdr_to_func' argument 3 names different: declaration 'w' definition 'x'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_hdr_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const float *data)
+                                                                              ^
+include-demo/stb_image_write.h:192:79: note: Function 'stbi_write_hdr_to_func' argument 3 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_hdr_to_func(stbi_write_func *func, void *context, int w, int h, int comp, const float *data);
+                                                                              ^
+include-demo/stb_image_write.h:787:79: note: Function 'stbi_write_hdr_to_func' argument 3 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_hdr_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const float *data)
+                                                                              ^
+include-demo/stb_image_write.h:787:86: style:inconclusive: Function 'stbi_write_hdr_to_func' argument 4 names different: declaration 'h' definition 'y'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_hdr_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const float *data)
+                                                                                     ^
+include-demo/stb_image_write.h:192:86: note: Function 'stbi_write_hdr_to_func' argument 4 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_hdr_to_func(stbi_write_func *func, void *context, int w, int h, int comp, const float *data);
+                                                                                     ^
+include-demo/stb_image_write.h:787:86: note: Function 'stbi_write_hdr_to_func' argument 4 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_hdr_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const float *data)
+                                                                                     ^
+include-demo/stb_image_write.h:794:55: style:inconclusive: Function 'stbi_write_hdr' argument 2 names different: declaration 'w' definition 'x'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_hdr(char const *filename, int x, int y, int comp, const float *data)
+                                                      ^
+include-demo/stb_image_write.h:179:55: note: Function 'stbi_write_hdr' argument 2 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_hdr(char const *filename, int w, int h, int comp, const float *data);
+                                                      ^
+include-demo/stb_image_write.h:794:55: note: Function 'stbi_write_hdr' argument 2 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_hdr(char const *filename, int x, int y, int comp, const float *data)
+                                                      ^
+include-demo/stb_image_write.h:794:62: style:inconclusive: Function 'stbi_write_hdr' argument 3 names different: declaration 'h' definition 'y'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_hdr(char const *filename, int x, int y, int comp, const float *data)
+                                                             ^
+include-demo/stb_image_write.h:179:62: note: Function 'stbi_write_hdr' argument 3 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_hdr(char const *filename, int w, int h, int comp, const float *data);
+                                                             ^
+include-demo/stb_image_write.h:794:62: note: Function 'stbi_write_hdr' argument 3 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_hdr(char const *filename, int x, int y, int comp, const float *data)
+                                                             ^
+include-demo/stb_image_write.h:1215:55: style:inconclusive: Function 'stbi_write_png' argument 2 names different: declaration 'w' definition 'x'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_png(char const *filename, int x, int y, int comp, const void *data, int stride_bytes)
+                                                      ^
+include-demo/stb_image_write.h:176:55: note: Function 'stbi_write_png' argument 2 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_png(char const *filename, int w, int h, int comp, const void  *data, int stride_in_bytes);
+                                                      ^
+include-demo/stb_image_write.h:1215:55: note: Function 'stbi_write_png' argument 2 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_png(char const *filename, int x, int y, int comp, const void *data, int stride_bytes)
+                                                      ^
+include-demo/stb_image_write.h:1215:62: style:inconclusive: Function 'stbi_write_png' argument 3 names different: declaration 'h' definition 'y'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_png(char const *filename, int x, int y, int comp, const void *data, int stride_bytes)
+                                                             ^
+include-demo/stb_image_write.h:176:62: note: Function 'stbi_write_png' argument 3 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_png(char const *filename, int w, int h, int comp, const void  *data, int stride_in_bytes);
+                                                             ^
+include-demo/stb_image_write.h:1215:62: note: Function 'stbi_write_png' argument 3 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_png(char const *filename, int x, int y, int comp, const void *data, int stride_bytes)
+                                                             ^
+include-demo/stb_image_write.h:1215:97: style:inconclusive: Function 'stbi_write_png' argument 6 names different: declaration 'stride_in_bytes' definition 'stride_bytes'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_png(char const *filename, int x, int y, int comp, const void *data, int stride_bytes)
+                                                                                                ^
+include-demo/stb_image_write.h:176:98: note: Function 'stbi_write_png' argument 6 names different: declaration 'stride_in_bytes' definition 'stride_bytes'.
+STBIWDEF int stbi_write_png(char const *filename, int w, int h, int comp, const void  *data, int stride_in_bytes);
+                                                                                                 ^
+include-demo/stb_image_write.h:1215:97: note: Function 'stbi_write_png' argument 6 names different: declaration 'stride_in_bytes' definition 'stride_bytes'.
+STBIWDEF int stbi_write_png(char const *filename, int x, int y, int comp, const void *data, int stride_bytes)
+                                                                                                ^
+include-demo/stb_image_write.h:1231:79: style:inconclusive: Function 'stbi_write_png_to_func' argument 3 names different: declaration 'w' definition 'x'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data, int stride_bytes)
+                                                                              ^
+include-demo/stb_image_write.h:189:79: note: Function 'stbi_write_png_to_func' argument 3 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int w, int h, int comp, const void  *data, int stride_in_bytes);
+                                                                              ^
+include-demo/stb_image_write.h:1231:79: note: Function 'stbi_write_png_to_func' argument 3 names different: declaration 'w' definition 'x'.
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data, int stride_bytes)
+                                                                              ^
+include-demo/stb_image_write.h:1231:86: style:inconclusive: Function 'stbi_write_png_to_func' argument 4 names different: declaration 'h' definition 'y'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data, int stride_bytes)
+                                                                                     ^
+include-demo/stb_image_write.h:189:86: note: Function 'stbi_write_png_to_func' argument 4 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int w, int h, int comp, const void  *data, int stride_in_bytes);
+                                                                                     ^
+include-demo/stb_image_write.h:1231:86: note: Function 'stbi_write_png_to_func' argument 4 names different: declaration 'h' definition 'y'.
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data, int stride_bytes)
+                                                                                     ^
+include-demo/stb_image_write.h:1231:121: style:inconclusive: Function 'stbi_write_png_to_func' argument 7 names different: declaration 'stride_in_bytes' definition 'stride_bytes'. [funcArgNamesDifferent]
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data, int stride_bytes)
+                                                                                                                        ^
+include-demo/stb_image_write.h:189:122: note: Function 'stbi_write_png_to_func' argument 7 names different: declaration 'stride_in_bytes' definition 'stride_bytes'.
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int w, int h, int comp, const void  *data, int stride_in_bytes);
+                                                                                                                         ^
+include-demo/stb_image_write.h:1231:121: note: Function 'stbi_write_png_to_func' argument 7 names different: declaration 'stride_in_bytes' definition 'stride_bytes'.
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int x, int y, int comp, const void *data, int stride_bytes)
+                                                                                                                        ^
+Raw_Demos/gears.c:77:10: style: Local variable 'angle' shadows outer variable [shadowVariable]
+ GLfloat angle, da;
+         ^
+Raw_Demos/gears.c:213:16: note: Shadowed declaration
+static GLfloat angle = 0.0;
+               ^
+Raw_Demos/gears.c:77:10: note: Shadow variable
+ GLfloat angle, da;
+         ^
+include-demo/stb_image_write.h:1027:0: information: Skipping configuration 'STBIW_CRC32' since the value of 'STBIW_CRC32' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    return STBIW_CRC32(buffer, len);
+^
+include-demo/stb_image_write.h:782:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBIW_FREE(scratch);
+^
+include-demo/stb_image_write.h:981:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      (void) stbiw__sbfree(hash_table[i]);
+^
+include-demo/stb_image_write.h:982:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBIW_FREE(hash_table);
+^
+include-demo/stb_image_write.h:1145:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   line_buffer = (signed char *) STBIW_MALLOC(x * n); if (!line_buffer) { STBIW_FREE(filt); return 0; }
+^
+include-demo/stb_image_write.h:1175:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBIW_FREE(line_buffer);
+^
+include-demo/stb_image_write.h:1177:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBIW_FREE(filt);
+^
+include-demo/stb_image_write.h:1202:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBIW_FREE(zlib);
+^
+include-demo/stb_image_write.h:1223:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (!f) { STBIW_FREE(png); return 0; }
+^
+include-demo/stb_image_write.h:1226:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBIW_FREE(png);
+^
+include-demo/stb_image_write.h:1237:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBIW_FREE(png);
+^
+include-demo/stb_image_write.h:767:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_MALLOC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      unsigned char *scratch = (unsigned char *) STBIW_MALLOC(x*4);
+^
+include-demo/stb_image_write.h:908:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_MALLOC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   unsigned char ***hash_table = (unsigned char***) STBIW_MALLOC(stbiw__ZHASH * sizeof(unsigned char**));
+^
+include-demo/stb_image_write.h:1144:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_MALLOC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   filt = (unsigned char *) STBIW_MALLOC((x*n+1) * y); if (!filt) return 0;
+^
+include-demo/stb_image_write.h:1145:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_MALLOC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   line_buffer = (signed char *) STBIW_MALLOC(x * n); if (!line_buffer) { STBIW_FREE(filt); return 0; }
+^
+include-demo/stb_image_write.h:1181:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_MALLOC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   out = (unsigned char *) STBIW_MALLOC(8 + 12+13 + 12+zlen + 12);
+^
+include-demo/stb_image_write.h:829:0: information: Skipping configuration 'STBIW_FREE;STBIW_MALLOC;STBIW_REALLOC;STBIW_REALLOC_SIZED' since the value of 'STBIW_REALLOC_SIZED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   void *p = STBIW_REALLOC_SIZED(*arr ? stbiw__sbraw(*arr) : 0, *arr ? (stbiw__sbm(*arr)*itemsize + sizeof(int)*2) : 0, itemsize * m + sizeof(int)*2);
+^
+include-demo/stb_image_write.h:899:0: information: Skipping configuration 'STBIW_ZLIB_COMPRESS' since the value of 'STBIW_ZLIB_COMPRESS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   return STBIW_ZLIB_COMPRESS(data, data_len, out_len, quality);
+^
+include-demo/stb_image_write.h:541:8: style: Condition '!stbi_write_tga_with_rle' is always false [knownConditionTrueFalse]
+   if (!stbi_write_tga_with_rle) {
+       ^
+include-demo/stb_image_write.h:1140:21: style: Condition 'force_filter>=5' is always false [knownConditionTrueFalse]
+   if (force_filter >= 5) {
+                    ^
+include-demo/stb_image_write.h:1130:23: note: Assignment 'force_filter=stbi_write_force_png_filter', assigned value is -1
+   int force_filter = stbi_write_force_png_filter;
+                      ^
+include-demo/stb_image_write.h:1140:21: note: Condition 'force_filter>=5' is always false
+   if (force_filter >= 5) {
+                    ^
+Raw_Demos/t2i.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 20 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+Raw_Demos/t2i.c:97:12: error: Memory leak: imbuf [memleak]
+ if(!text) return 1;
+           ^
+include-demo/3dMath.h:310:9: error: Uninitialized variable: result [uninitvar]
+ return result;
+        ^
+include-demo/3dMath.h:528:13: style: Variable 'axispen[1]' is assigned a value that is never used. [unreadVariable]
+ axispen[1] = subv3(b1min,b2max);
+            ^
+SDL_Examples/game.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+include-demo/stb_image.h:5510:17: style: Redundant condition: If 'req_comp >= 3', the comparison 'req_comp' is always true. [redundantCondition]
+   if (req_comp && req_comp >= 3) // we can directly decode 3 or 4
+                ^
+SDL_Examples/game.c:476:4: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+   printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f,
+   ^
+SDL_Examples/game.c:482:2: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f, (float)frames * 1000.0f / (float)(tNow - tLastFps));
+ ^
+include-demo/stb_image.h:7036:6: style: Redundant initialization for 'c'. The initialized value is overwritten before it is read. [redundantInitialization]
+   c = (char) stbi__get8(z);
+     ^
+include-demo/stb_image.h:7034:11: note: c is initialized
+   char c = '\0';
+          ^
+include-demo/stb_image.h:7036:6: note: c is overwritten
+   c = (char) stbi__get8(z);
+     ^
+include-demo/stb_image.h:1167:11: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   return stbi__errpuc("unknown image type", "Image not of any known type, or corrupt");
+          ^
+include-demo/stb_image.h:1177:32: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (reduced == NULL) return stbi__errpuc("outofmem", "Out of memory");
+                               ^
+include-demo/stb_image.h:1193:50: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (enlarged == NULL) return (stbi__uint16 *) stbi__errpuc("outofmem", "Out of memory");
+                                                 ^
+include-demo/stb_image.h:1350:19: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!f) return stbi__errpuc("can't fopen", "Unable to open file");
+                  ^
+include-demo/stb_image.h:1386:31: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!f) return (stbi_us *) stbi__errpuc("can't fopen", "Unable to open file");
+                              ^
+include-demo/stb_image.h:1455:11: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   return stbi__errpf("unknown image type", "Image not of any known type, or corrupt");
+          ^
+include-demo/stb_image.h:1477:19: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!f) return stbi__errpf("can't fopen", "Unable to open file");
+                  ^
+include-demo/stb_image.h:1746:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("outofmem", "Out of memory");
+             ^
+include-demo/stb_image.h:1770:76: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         default: STBI_ASSERT(0); STBI_FREE(data); STBI_FREE(good); return stbi__errpuc("unsupported", "Unsupported format conversion");
+                                                                           ^
+include-demo/stb_image.h:1803:31: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return (stbi__uint16 *) stbi__errpuc("outofmem", "Out of memory");
+                              ^
+include-demo/stb_image.h:1827:92: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         default: STBI_ASSERT(0); STBI_FREE(data); STBI_FREE(good); return (stbi__uint16*) stbi__errpuc("unsupported", "Unsupported format conversion");
+                                                                                           ^
+include-demo/stb_image.h:1844:50: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (output == NULL) { STBI_FREE(data); return stbi__errpf("outofmem", "Out of memory"); }
+                                                 ^
+include-demo/stb_image.h:1870:50: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (output == NULL) { STBI_FREE(data); return stbi__errpuc("outofmem", "Out of memory"); }
+                                                 ^
+include-demo/stb_image.h:3817:45: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (req_comp < 0 || req_comp > 4) return stbi__errpuc("bad req_comp", "Internal error");
+                                            ^
+include-demo/stb_image.h:3851:71: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (!z->img_comp[k].linebuf) { stbi__cleanup_jpeg(z); return stbi__errpuc("outofmem", "Out of memory"); }
+                                                                      ^
+include-demo/stb_image.h:3869:52: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (!output) { stbi__cleanup_jpeg(z); return stbi__errpuc("outofmem", "Out of memory"); }
+                                                   ^
+include-demo/stb_image.h:3978:19: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!j) return stbi__errpuc("outofmem", "Out of memory");
+                  ^
+include-demo/stb_image.h:5202:45: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (req_comp < 0 || req_comp > 4) return stbi__errpuc("bad req_comp", "Internal error");
+                                            ^
+include-demo/stb_image.h:5209:17: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         return stbi__errpuc("bad bits_per_channel", "PNG not supported: unsupported color depth");
+                ^
+include-demo/stb_image.h:5387:61: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (stbi__get8(s) != 'B' || stbi__get8(s) != 'M') return stbi__errpuc("not BMP", "Corrupt BMP");
+                                                            ^
+include-demo/stb_image.h:5396:33: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (info->offset < 0) return stbi__errpuc("bad BMP", "bad BMP");
+                                ^
+include-demo/stb_image.h:5398:80: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (hsz != 12 && hsz != 40 && hsz != 56 && hsz != 108 && hsz != 124) return stbi__errpuc("unknown BMP", "BMP type not supported: unknown");
+                                                                               ^
+include-demo/stb_image.h:5406:38: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (stbi__get16le(s) != 1) return stbi__errpuc("bad BMP", "bad BMP");
+                                     ^
+include-demo/stb_image.h:5410:50: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (compress == 1 || compress == 2) return stbi__errpuc("BMP RLE", "BMP type not supported: RLE");
+                                                 ^
+include-demo/stb_image.h:5411:33: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (compress >= 4) return stbi__errpuc("BMP JPEG/PNG", "BMP type not supported: unsupported compression"); // this includes PNG/JPEG modes
+                                ^
+include-demo/stb_image.h:5412:71: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (compress == 3 && info->bpp != 16 && info->bpp != 32) return stbi__errpuc("bad BMP", "bad BMP"); // bitfields requires 16 or 32 bits/pixel
+                                                                      ^
+include-demo/stb_image.h:5436:26: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  return stbi__errpuc("bad BMP", "bad BMP");
+                         ^
+include-demo/stb_image.h:5439:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("bad BMP", "bad BMP");
+                      ^
+include-demo/stb_image.h:5445:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("bad BMP", "bad BMP");
+                   ^
+include-demo/stb_image.h:5484:47: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (s->img_y > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                              ^
+include-demo/stb_image.h:5485:47: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (s->img_x > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                              ^
+include-demo/stb_image.h:5502:16: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+        return stbi__errpuc("bad offset", "Corrupt BMP");
+               ^
+include-demo/stb_image.h:5517:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("too large", "Corrupt BMP");
+             ^
+include-demo/stb_image.h:5520:21: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!out) return stbi__errpuc("outofmem", "Out of memory");
+                    ^
+include-demo/stb_image.h:5523:63: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (psize == 0 || psize > 256) { STBI_FREE(out); return stbi__errpuc("invalid", "Corrupt BMP"); }
+                                                              ^
+include-demo/stb_image.h:5535:37: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      else { STBI_FREE(out); return stbi__errpuc("bad bpp", "Corrupt BMP"); }
+                                    ^
+include-demo/stb_image.h:5592:58: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (!mr || !mg || !mb) { STBI_FREE(out); return stbi__errpuc("bad masks", "Corrupt BMP"); }
+                                                         ^
+include-demo/stb_image.h:5598:93: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (rcount > 8 || gcount > 8 || bcount > 8 || acount > 8) { STBI_FREE(out); return stbi__errpuc("bad masks", "Corrupt BMP"); }
+                                                                                            ^
+include-demo/stb_image.h:5823:49: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (tga_height > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                                ^
+include-demo/stb_image.h:5824:48: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (tga_width > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                               ^
+include-demo/stb_image.h:5839:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("bad format", "Can't find out TGA pixelformat");
+             ^
+include-demo/stb_image.h:5847:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("too large", "Corrupt TGA");
+             ^
+include-demo/stb_image.h:5850:26: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!tga_data) return stbi__errpuc("outofmem", "Out of memory");
+                         ^
+include-demo/stb_image.h:5867:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("bad palette", "Corrupt TGA");
+                   ^
+include-demo/stb_image.h:5876:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("outofmem", "Out of memory");
+                   ^
+include-demo/stb_image.h:5888:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("bad palette", "Corrupt TGA");
+                      ^
+include-demo/stb_image.h:6060:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("not PSD", "Corrupt PSD image");
+             ^
+include-demo/stb_image.h:6064:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("wrong version", "Unsupported version of PSD image");
+             ^
+include-demo/stb_image.h:6072:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("wrong channel count", "Unsupported number of channels in PSD image");
+             ^
+include-demo/stb_image.h:6078:40: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (h > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                       ^
+include-demo/stb_image.h:6079:40: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (w > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                       ^
+include-demo/stb_image.h:6084:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("unsupported bit depth", "PSD bit depth is not 8 or 16 bit");
+             ^
+include-demo/stb_image.h:6097:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("wrong color format", "PSD is not in RGB color format");
+             ^
+include-demo/stb_image.h:6114:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("bad compression", "PSD has an unknown compression format");
+             ^
+include-demo/stb_image.h:6118:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("too large", "Corrupt PSD");
+             ^
+include-demo/stb_image.h:6128:21: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!out) return stbi__errpuc("outofmem", "Out of memory");
+                    ^
+include-demo/stb_image.h:6161:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("corrupt", "bad RLE data");
+                      ^
+include-demo/stb_image.h:6295:38: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (stbi__at_eof(s)) return stbi__errpuc("bad file","PIC file too short");
+                                     ^
+include-demo/stb_image.h:6323:17: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         return stbi__errpuc("bad format","too many packets");
+                ^
+include-demo/stb_image.h:6334:44: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (stbi__at_eof(s))          return stbi__errpuc("bad file","file too short (reading packets)");
+                                           ^
+include-demo/stb_image.h:6335:38: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (packet->size != 8)  return stbi__errpuc("bad format","packet isn't 8bpp");
+                                     ^
+include-demo/stb_image.h:6349:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("bad format","packet has bad compression type");
+                      ^
+include-demo/stb_image.h:6368:52: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                     if (stbi__at_eof(s))   return stbi__errpuc("bad file","file too short (pure read count)");
+                                                   ^
+include-demo/stb_image.h:6386:48: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  if (stbi__at_eof(s))  return stbi__errpuc("bad file","file too short (mixed read count)");
+                                               ^
+include-demo/stb_image.h:6396:32: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                        return stbi__errpuc("bad file","scanline overrun");
+                               ^
+include-demo/stb_image.h:6405:45: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                     if (count>left) return stbi__errpuc("bad file","scanline overrun");
+                                            ^
+include-demo/stb_image.h:6436:40: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (y > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                       ^
+include-demo/stb_image.h:6437:40: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (x > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                       ^
+include-demo/stb_image.h:6439:33: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (stbi__at_eof(s))  return stbi__errpuc("bad file","file too short (pic header)");
+                                ^
+include-demo/stb_image.h:6440:51: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!stbi__mad3sizes_valid(x, y, 4, 0)) return stbi__errpuc("too large", "PIC image too large to decode");
+                                                  ^
+include-demo/stb_image.h:6448:24: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!result) return stbi__errpuc("outofmem", "Out of memory");
+                       ^
+include-demo/stb_image.h:6668:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("no clear code", "Corrupt GIF");
+                      ^
+include-demo/stb_image.h:6674:26: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  return stbi__errpuc("too many codes", "Corrupt GIF");
+                         ^
+include-demo/stb_image.h:6681:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("illegal code in raster", "Corrupt GIF");
+                      ^
+include-demo/stb_image.h:6692:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("illegal code in raster", "Corrupt GIF");
+                   ^
+include-demo/stb_image.h:6713:17: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         return stbi__errpuc("too large", "GIF image is too large");
+                ^
+include-demo/stb_image.h:6719:17: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         return stbi__errpuc("outofmem", "Out of memory");
+                ^
+include-demo/stb_image.h:6777:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("bad Image Descriptor", "Corrupt GIF");
+                      ^
+include-demo/stb_image.h:6810:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("missing color table", "Corrupt GIF");
+                      ^
+include-demo/stb_image.h:6869:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("unknown code", "Corrupt GIF");
+                   ^
+include-demo/stb_image.h:6882:11: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   return stbi__errpuc("outofmem", "Out of memory");
+          ^
+include-demo/stb_image.h:6966:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("not GIF", "Image was not as a gif type.");
+             ^
+include-demo/stb_image.h:7097:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpf("not HDR", "Corrupt HDR image");
+             ^
+include-demo/stb_image.h:7106:26: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!valid)    return stbi__errpf("unsupported format", "Unsupported HDR format");
+                         ^
+include-demo/stb_image.h:7111:42: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (strncmp(token, "-Y ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+                                         ^
+include-demo/stb_image.h:7115:42: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (strncmp(token, "+X ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+                                         ^
+include-demo/stb_image.h:7119:45: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (height > STBI_MAX_DIMENSIONS) return stbi__errpf("too large","Very large image (corrupt?)");
+                                            ^
+include-demo/stb_image.h:7120:44: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (width > STBI_MAX_DIMENSIONS) return stbi__errpf("too large","Very large image (corrupt?)");
+                                           ^
+include-demo/stb_image.h:7129:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpf("too large", "HDR image is too large");
+             ^
+include-demo/stb_image.h:7134:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpf("outofmem", "Out of memory");
+             ^
+include-demo/stb_image.h:7172:79: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (len != width) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("invalid decoded scanline length", "corrupt HDR"); }
+                                                                              ^
+include-demo/stb_image.h:7177:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpf("outofmem", "Out of memory");
+                      ^
+include-demo/stb_image.h:7190:89: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  if (count > nleft) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("corrupt", "bad RLE data in HDR"); }
+                                                                                        ^
+include-demo/stb_image.h:7195:89: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  if (count > nleft) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("corrupt", "bad RLE data in HDR"); }
+                                                                                        ^
+include-demo/stb_image.h:7437:47: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (s->img_y > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                              ^
+include-demo/stb_image.h:7438:47: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (s->img_x > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                              ^
+include-demo/stb_image.h:7445:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("too large", "PNM too large");
+             ^
+include-demo/stb_image.h:7448:21: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!out) return stbi__errpuc("outofmem", "Out of memory");
+                    ^
+include-demo/stb_image.h:2236:8: style: The scope of the variable 'diff' can be reduced. [variableScope]
+   int diff,dc;
+       ^
+include-demo/stb_image.h:2236:13: style: The scope of the variable 'dc' can be reduced. [variableScope]
+   int diff,dc;
+            ^
+include-demo/stb_image.h:2237:8: style: The scope of the variable 't' can be reduced. [variableScope]
+   int t;
+       ^
+include-demo/stb_image.h:3232:15: style: The scope of the variable 'q' can be reduced. [variableScope]
+   int Lf,p,i,q, h_max=1,v_max=1,c;
+              ^
+include-demo/stb_image.h:3454:10: style: The scope of the variable 't0' can be reduced. [variableScope]
+   int i,t0,t1;
+         ^
+include-demo/stb_image.h:4187:10: style: The scope of the variable 's' can be reduced. [variableScope]
+   int b,s;
+         ^
+include-demo/stb_image.h:4406:15: style: The scope of the variable 'type' can be reduced. [variableScope]
+   int final, type;
+              ^
+include-demo/stb_image.h:4823:11: style: The scope of the variable 'i' can be reduced. [variableScope]
+      int i,j,x,y;
+          ^
+include-demo/stb_image.h:4823:13: style: The scope of the variable 'j' can be reduced. [variableScope]
+      int i,j,x,y;
+            ^
+include-demo/stb_image.h:5680:9: style: The scope of the variable 'sz' can be reduced. [variableScope]
+    int sz, tga_colormap_type;
+        ^
+include-demo/stb_image.h:5814:11: style: The scope of the variable 'j' can be reduced. [variableScope]
+   int i, j;
+          ^
+include-demo/stb_image.h:5816:8: style: The scope of the variable 'RLE_count' can be reduced. [variableScope]
+   int RLE_count = 0;
+       ^
+include-demo/stb_image.h:5817:8: style: The scope of the variable 'RLE_repeating' can be reduced. [variableScope]
+   int RLE_repeating = 0;
+       ^
+include-demo/stb_image.h:5818:8: style: The scope of the variable 'read_next_pixel' can be reduced. [variableScope]
+   int read_next_pixel = 1;
+       ^
+include-demo/stb_image.h:6012:22: style: The scope of the variable 'len' can be reduced. [variableScope]
+   int count, nleft, len;
+                     ^
+include-demo/stb_image.h:6702:8: style: The scope of the variable 'dispose' can be reduced. [variableScope]
+   int dispose;
+       ^
+include-demo/stb_image.h:5346:6: error: Shifting by a negative value is undefined behaviour [shiftNegative]
+   v >>= (8-bits);
+     ^
+include-demo/stb_image.h:1346:71: style:inconclusive: Function 'stbi_load' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                      ^
+include-demo/stb_image.h:424:83: note: Function 'stbi_load' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load            (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                  ^
+include-demo/stb_image.h:1346:71: note: Function 'stbi_load' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                      ^
+include-demo/stb_image.h:1346:81: style:inconclusive: Function 'stbi_load' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                                ^
+include-demo/stb_image.h:424:105: note: Function 'stbi_load' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load            (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                        ^
+include-demo/stb_image.h:1346:81: note: Function 'stbi_load' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                                ^
+include-demo/stb_image.h:1356:68: style:inconclusive: Function 'stbi_load_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                   ^
+include-demo/stb_image.h:425:70: note: Function 'stbi_load_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_file  (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                     ^
+include-demo/stb_image.h:1356:68: note: Function 'stbi_load_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                   ^
+include-demo/stb_image.h:1356:78: style:inconclusive: Function 'stbi_load_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                             ^
+include-demo/stb_image.h:425:92: note: Function 'stbi_load_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_file  (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                           ^
+include-demo/stb_image.h:1356:78: note: Function 'stbi_load_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                             ^
+include-demo/stb_image.h:1369:76: style:inconclusive: Function 'stbi_load_from_file_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi__uint16 *stbi_load_from_file_16(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                           ^
+include-demo/stb_image.h:447:71: note: Function 'stbi_load_from_file_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_us *stbi_load_from_file_16(FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                      ^
+include-demo/stb_image.h:1369:76: note: Function 'stbi_load_from_file_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi__uint16 *stbi_load_from_file_16(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                           ^
+include-demo/stb_image.h:1369:86: style:inconclusive: Function 'stbi_load_from_file_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi__uint16 *stbi_load_from_file_16(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                                     ^
+include-demo/stb_image.h:447:93: note: Function 'stbi_load_from_file_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_us *stbi_load_from_file_16(FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                            ^
+include-demo/stb_image.h:1369:86: note: Function 'stbi_load_from_file_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi__uint16 *stbi_load_from_file_16(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                                     ^
+include-demo/stb_image.h:1382:74: style:inconclusive: Function 'stbi_load_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                         ^
+include-demo/stb_image.h:446:84: note: Function 'stbi_load_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_us *stbi_load_16          (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                   ^
+include-demo/stb_image.h:1382:74: note: Function 'stbi_load_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                         ^
+include-demo/stb_image.h:1382:84: style:inconclusive: Function 'stbi_load_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                                   ^
+include-demo/stb_image.h:446:106: note: Function 'stbi_load_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_us *stbi_load_16          (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                         ^
+include-demo/stb_image.h:1382:84: note: Function 'stbi_load_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                                   ^
+include-demo/stb_image.h:1409:93: style:inconclusive: Function 'stbi_load_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                            ^
+include-demo/stb_image.h:420:109: note: Function 'stbi_load_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_memory   (stbi_uc           const *buffer, int len   , int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                            ^
+include-demo/stb_image.h:1409:93: note: Function 'stbi_load_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                            ^
+include-demo/stb_image.h:1409:103: style:inconclusive: Function 'stbi_load_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                                      ^
+include-demo/stb_image.h:420:131: note: Function 'stbi_load_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_memory   (stbi_uc           const *buffer, int len   , int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                                                  ^
+include-demo/stb_image.h:1409:103: note: Function 'stbi_load_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                                      ^
+include-demo/stb_image.h:1416:107: style:inconclusive: Function 'stbi_load_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                          ^
+include-demo/stb_image.h:421:109: note: Function 'stbi_load_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk  , void *user, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                            ^
+include-demo/stb_image.h:1416:107: note: Function 'stbi_load_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                          ^
+include-demo/stb_image.h:1416:117: style:inconclusive: Function 'stbi_load_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                                    ^
+include-demo/stb_image.h:421:131: note: Function 'stbi_load_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk  , void *user, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                                                  ^
+include-demo/stb_image.h:1416:117: note: Function 'stbi_load_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                                    ^
+include-demo/stb_image.h:1458:92: style:inconclusive: Function 'stbi_loadf_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                           ^
+include-demo/stb_image.h:455:100: note: Function 'stbi_loadf_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+   STBIDEF float *stbi_loadf_from_memory     (stbi_uc const *buffer, int len, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                   ^
+include-demo/stb_image.h:1458:92: note: Function 'stbi_loadf_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                           ^
+include-demo/stb_image.h:1458:102: style:inconclusive: Function 'stbi_loadf_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                                     ^
+include-demo/stb_image.h:455:122: note: Function 'stbi_loadf_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+   STBIDEF float *stbi_loadf_from_memory     (stbi_uc const *buffer, int len, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                                         ^
+include-demo/stb_image.h:1458:102: note: Function 'stbi_loadf_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                                     ^
+include-demo/stb_image.h:1465:106: style:inconclusive: Function 'stbi_loadf_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                         ^
+include-demo/stb_image.h:456:112: note: Function 'stbi_loadf_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+   STBIDEF float *stbi_loadf_from_callbacks  (stbi_io_callbacks const *clbk, void *user, int *x, int *y,  int *channels_in_file, int desired_channels);
+                                                                                                               ^
+include-demo/stb_image.h:1465:106: note: Function 'stbi_loadf_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                         ^
+include-demo/stb_image.h:1465:116: style:inconclusive: Function 'stbi_loadf_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                                   ^
+include-demo/stb_image.h:456:134: note: Function 'stbi_loadf_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+   STBIDEF float *stbi_loadf_from_callbacks  (stbi_io_callbacks const *clbk, void *user, int *x, int *y,  int *channels_in_file, int desired_channels);
+                                                                                                                                     ^
+include-demo/stb_image.h:1465:116: note: Function 'stbi_loadf_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                                   ^
+include-demo/stb_image.h:1473:70: style:inconclusive: Function 'stbi_loadf' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                     ^
+include-demo/stb_image.h:459:85: note: Function 'stbi_loadf' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+   STBIDEF float *stbi_loadf            (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                    ^
+include-demo/stb_image.h:1473:70: note: Function 'stbi_loadf' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                     ^
+include-demo/stb_image.h:1473:80: style:inconclusive: Function 'stbi_loadf' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                               ^
+include-demo/stb_image.h:459:107: note: Function 'stbi_loadf' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+   STBIDEF float *stbi_loadf            (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                          ^
+include-demo/stb_image.h:1473:80: note: Function 'stbi_loadf' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                               ^
+include-demo/stb_image.h:1483:67: style:inconclusive: Function 'stbi_loadf_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                  ^
+include-demo/stb_image.h:460:72: note: Function 'stbi_loadf_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+   STBIDEF float *stbi_loadf_from_file  (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                       ^
+include-demo/stb_image.h:1483:67: note: Function 'stbi_loadf_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF float *stbi_loadf_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                  ^
+include-demo/stb_image.h:1483:77: style:inconclusive: Function 'stbi_loadf_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                            ^
+include-demo/stb_image.h:460:94: note: Function 'stbi_loadf_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+   STBIDEF float *stbi_loadf_from_file  (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                             ^
+include-demo/stb_image.h:1483:77: note: Function 'stbi_loadf_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF float *stbi_loadf_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                            ^
+include-demo/stb_image.h:6422:51: style:inconclusive: Function 'stbi__pic_load' argument 2 names different: declaration 'x' definition 'px'. [funcArgNamesDifferent]
+static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_comp, stbi__result_info *ri)
+                                                  ^
+include-demo/stb_image.h:945:55: note: Function 'stbi__pic_load' argument 2 names different: declaration 'x' definition 'px'.
+static void    *stbi__pic_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__result_info *ri);
+                                                      ^
+include-demo/stb_image.h:6422:51: note: Function 'stbi__pic_load' argument 2 names different: declaration 'x' definition 'px'.
+static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_comp, stbi__result_info *ri)
+                                                  ^
+include-demo/stb_image.h:6422:59: style:inconclusive: Function 'stbi__pic_load' argument 3 names different: declaration 'y' definition 'py'. [funcArgNamesDifferent]
+static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_comp, stbi__result_info *ri)
+                                                          ^
+include-demo/stb_image.h:945:63: note: Function 'stbi__pic_load' argument 3 names different: declaration 'y' definition 'py'.
+static void    *stbi__pic_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__result_info *ri);
+                                                              ^
+include-demo/stb_image.h:6422:59: note: Function 'stbi__pic_load' argument 3 names different: declaration 'y' definition 'py'.
+static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_comp, stbi__result_info *ri)
+                                                          ^
+include-demo/stb_image.h:7650:63: style:inconclusive: Function 'stbi_info_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'. [funcArgNamesDifferent]
+STBIDEF int stbi_info_from_callbacks(stbi_io_callbacks const *c, void *user, int *x, int *y, int *comp)
+                                                              ^
+include-demo/stb_image.h:492:68: note: Function 'stbi_info_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'.
+STBIDEF int      stbi_info_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp);
+                                                                   ^
+include-demo/stb_image.h:7650:63: note: Function 'stbi_info_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'.
+STBIDEF int stbi_info_from_callbacks(stbi_io_callbacks const *c, void *user, int *x, int *y, int *comp)
+                                                              ^
+include-demo/stb_image.h:7664:68: style:inconclusive: Function 'stbi_is_16_bit_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'. [funcArgNamesDifferent]
+STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user)
+                                                                   ^
+include-demo/stb_image.h:494:73: note: Function 'stbi_is_16_bit_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'.
+STBIDEF int      stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *clbk, void *user);
+                                                                        ^
+include-demo/stb_image.h:7664:68: note: Function 'stbi_is_16_bit_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'.
+STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user)
+                                                                   ^
+SDL_Examples/game.c:334:11: style: Variable 't' is assigned a value that is never used. [unreadVariable]
+ double t = 0;
+          ^
+SDL_Examples/game.c:341:11: style: Variable 'm' is assigned a value that is never used. [unreadVariable]
+  model m = initmodel();
+          ^
+SDL_Examples/game.c:381:5: style: Variable 't' is assigned a value that is never used. [unreadVariable]
+  t += 0.016666f;
+    ^
+include-demo/stb_image.h:1083:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(retval_from_stbi_load);
+^
+include-demo/stb_image.h:1182:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(orig);
+^
+include-demo/stb_image.h:1198:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(orig);
+^
+include-demo/stb_image.h:1745:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(data);
+^
+include-demo/stb_image.h:1770:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         default: STBI_ASSERT(0); STBI_FREE(data); STBI_FREE(good); return stbi__errpuc("unsupported", "Unsupported format conversion");
+^
+include-demo/stb_image.h:1775:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(data);
+^
+include-demo/stb_image.h:1802:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(data);
+^
+include-demo/stb_image.h:1827:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         default: STBI_ASSERT(0); STBI_FREE(data); STBI_FREE(good); return (stbi__uint16*) stbi__errpuc("unsupported", "Unsupported format conversion");
+^
+include-demo/stb_image.h:1832:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(data);
+^
+include-demo/stb_image.h:1844:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (output == NULL) { STBI_FREE(data); return stbi__errpf("outofmem", "Out of memory"); }
+^
+include-demo/stb_image.h:1857:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(data);
+^
+include-demo/stb_image.h:1870:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (output == NULL) { STBI_FREE(data); return stbi__errpuc("outofmem", "Out of memory"); }
+^
+include-demo/stb_image.h:1887:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(data);
+^
+include-demo/stb_image.h:3212:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(z->img_comp[i].raw_data);
+^
+include-demo/stb_image.h:3217:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(z->img_comp[i].raw_coeff);
+^
+include-demo/stb_image.h:3222:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(z->img_comp[i].linebuf);
+^
+include-demo/stb_image.h:3983:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(j);
+^
+include-demo/stb_image.h:3996:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(j);
+^
+include-demo/stb_image.h:4019:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(j);
+^
+include-demo/stb_image.h:4453:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(a.zout_start);
+^
+include-demo/stb_image.h:4474:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(a.zout_start);
+^
+include-demo/stb_image.h:4501:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(a.zout_start);
+^
+include-demo/stb_image.h:4830:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(final);
+^
+include-demo/stb_image.h:4841:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(a->out);
+^
+include-demo/stb_image.h:4930:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(a->out);
+^
+include-demo/stb_image.h:5145:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(z->idata); z->idata = NULL;
+^
+include-demo/stb_image.h:5171:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(z->expanded); z->expanded = NULL;
+^
+include-demo/stb_image.h:5224:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(p->out);      p->out      = NULL;
+^
+include-demo/stb_image.h:5225:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(p->expanded); p->expanded = NULL;
+^
+include-demo/stb_image.h:5226:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(p->idata);    p->idata    = NULL;
+^
+include-demo/stb_image.h:5523:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      if (psize == 0 || psize > 256) { STBI_FREE(out); return stbi__errpuc("invalid", "Corrupt BMP"); }
+^
+include-demo/stb_image.h:5535:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      else { STBI_FREE(out); return stbi__errpuc("bad bpp", "Corrupt BMP"); }
+^
+include-demo/stb_image.h:5592:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         if (!mr || !mg || !mb) { STBI_FREE(out); return stbi__errpuc("bad masks", "Corrupt BMP"); }
+^
+include-demo/stb_image.h:5598:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         if (rcount > 8 || gcount > 8 || bcount > 8 || acount > 8) { STBI_FREE(out); return stbi__errpuc("bad masks", "Corrupt BMP"); }
+^
+include-demo/stb_image.h:5866:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(tga_data);
+^
+include-demo/stb_image.h:5875:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(tga_data);
+^
+include-demo/stb_image.h:5886:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               STBI_FREE(tga_data);
+^
+include-demo/stb_image.h:5887:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               STBI_FREE(tga_palette);
+^
+include-demo/stb_image.h:5968:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE( tga_palette );
+^
+include-demo/stb_image.h:6160:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               STBI_FREE(out);
+^
+include-demo/stb_image.h:6452:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(result);
+^
+include-demo/stb_image.h:6566:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g);
+^
+include-demo/stb_image.h:6572:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g);
+^
+include-demo/stb_image.h:6876:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g->out);
+^
+include-demo/stb_image.h:6877:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g->history);
+^
+include-demo/stb_image.h:6878:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g->background);
+^
+include-demo/stb_image.h:6880:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (out) STBI_FREE(out);
+^
+include-demo/stb_image.h:6881:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (delays && *delays) STBI_FREE(*delays);
+^
+include-demo/stb_image.h:6955:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g.out);
+^
+include-demo/stb_image.h:6956:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g.history);
+^
+include-demo/stb_image.h:6957:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g.background);
+^
+include-demo/stb_image.h:6989:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g.out);
+^
+include-demo/stb_image.h:6993:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g.history);
+^
+include-demo/stb_image.h:6994:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g.background);
+^
+include-demo/stb_image.h:7167:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(scanline);
+^
+include-demo/stb_image.h:7172:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         if (len != width) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("invalid decoded scanline length", "corrupt HDR"); }
+^
+include-demo/stb_image.h:7176:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               STBI_FREE(hdr_data);
+^
+include-demo/stb_image.h:7190:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                  if (count > nleft) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("corrupt", "bad RLE data in HDR"); }
+^
+include-demo/stb_image.h:7195:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                  if (count > nleft) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("corrupt", "bad RLE data in HDR"); }
+^
+include-demo/stb_image.h:7205:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(scanline);
+^
+include-demo/stb_image.h:984:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_MALLOC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    return STBI_MALLOC(size);
+^
+include-demo/stb_image.h:4217:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_REALLOC_SIZED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   q = (char *) STBI_REALLOC_SIZED(z->zout_start, old_limit, limit);
+^
+include-demo/stb_image.h:5127:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_REALLOC_SIZED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               p = (stbi_uc *) STBI_REALLOC_SIZED(z->idata, idata_limit_old, idata_limit); if (p == NULL) return stbi__err("outofmem", "Out of memory");
+^
+include-demo/stb_image.h:6916:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_REALLOC_SIZED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               void *tmp = (stbi_uc*) STBI_REALLOC_SIZED( out, out_size, layers * stride );
+^
+include-demo/stb_image.h:6925:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_REALLOC_SIZED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                  int *new_delays = (int*) STBI_REALLOC_SIZED( *delays, delays_size, sizeof(int) * layers );
+^
+include-demo/stb_image.h:3782:25: style: Variable 'j->idct_block_kernel' is reassigned a value before the old one has been used. [redundantAssignment]
+   j->idct_block_kernel = stbi__idct_simd;
+                        ^
+include-demo/stb_image.h:3769:25: note: j->idct_block_kernel is assigned
+   j->idct_block_kernel = stbi__idct_block;
+                        ^
+include-demo/stb_image.h:3782:25: note: j->idct_block_kernel is overwritten
+   j->idct_block_kernel = stbi__idct_simd;
+                        ^
+include-demo/stb_image.h:3783:27: style: Variable 'j->YCbCr_to_RGB_kernel' is reassigned a value before the old one has been used. [redundantAssignment]
+   j->YCbCr_to_RGB_kernel = stbi__YCbCr_to_RGB_simd;
+                          ^
+include-demo/stb_image.h:3770:27: note: j->YCbCr_to_RGB_kernel is assigned
+   j->YCbCr_to_RGB_kernel = stbi__YCbCr_to_RGB_row;
+                          ^
+include-demo/stb_image.h:3783:27: note: j->YCbCr_to_RGB_kernel is overwritten
+   j->YCbCr_to_RGB_kernel = stbi__YCbCr_to_RGB_simd;
+                          ^
+include-demo/stb_image.h:3784:32: style: Variable 'j->resample_row_hv_2_kernel' is reassigned a value before the old one has been used. [redundantAssignment]
+   j->resample_row_hv_2_kernel = stbi__resample_row_hv_2_simd;
+                               ^
+include-demo/stb_image.h:3771:32: note: j->resample_row_hv_2_kernel is assigned
+   j->resample_row_hv_2_kernel = stbi__resample_row_hv_2;
+                               ^
+include-demo/stb_image.h:3784:32: note: j->resample_row_hv_2_kernel is overwritten
+   j->resample_row_hv_2_kernel = stbi__resample_row_hv_2_simd;
+                               ^
+include-demo/stb_image.h:6921:29: style: Variable 'out_size' is assigned a value that is never used. [unreadVariable]
+                   out_size = layers * stride;
+                            ^
+include-demo/stb_image.h:6929:31: style: Variable 'delays_size' is assigned a value that is never used. [unreadVariable]
+                  delays_size = layers * sizeof(int);
+                              ^
+include-demo/stb_image.h:6935:25: style: Variable 'out_size' is assigned a value that is never used. [unreadVariable]
+               out_size = layers * stride;
+                        ^
+include-demo/stb_image.h:6940:31: style: Variable 'delays_size' is assigned a value that is never used. [unreadVariable]
+                  delays_size = layers * sizeof(int);
+                              ^
+SDL_Examples/gears.c:546:4: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+   printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f,
+   ^
+SDL_Examples/gears.c:552:2: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f, (float)frames * 1000.0f / (float)(tNow - tLastFps));
+ ^
+SDL_Examples/gears.c:56:10: style: The scope of the variable 'u' can be reduced. [variableScope]
+ GLfloat u, v, len;
+         ^
+SDL_Examples/gears.c:56:13: style: The scope of the variable 'v' can be reduced. [variableScope]
+ GLfloat u, v, len;
+            ^
+SDL_Examples/gears.c:56:16: style: The scope of the variable 'len' can be reduced. [variableScope]
+ GLfloat u, v, len;
+               ^
+SDL_Examples/gears.c:55:10: style: Local variable 'angle' shadows outer variable [shadowVariable]
+ GLfloat angle, da;
+         ^
+SDL_Examples/gears.c:190:16: note: Shadowed declaration
+static GLfloat angle = 0.0;
+               ^
+SDL_Examples/gears.c:55:10: note: Shadow variable
+ GLfloat angle, da;
+         ^
+SDL_Examples/helloworld.c:316:4: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+   printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f,
+   ^
+SDL_Examples/helloworld.c:322:2: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f, (float)frames * 1000.0f / (float)(tNow - tLastFps));
+ ^
+SDL_Examples/helloworld.c:205:9: style: Variable 'mode' is assigned a value that is never used. [unreadVariable]
+   mode = ZB_MODE_RGB24;
+        ^
+SDL_Examples/model.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+SDL_Examples/model.c:470:6: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+     printf("\nBuffer %d is %d", i, buffers[i]);
+     ^
+SDL_Examples/model.c:709:4: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+   printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f,
+   ^
+SDL_Examples/model.c:715:2: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f, (float)frames * 1000.0f / (float)(tNow - tLastFps));
+ ^
+SDL_Examples/model.c:382:8: style: Variable 'mode' is assigned a value that is never used. [unreadVariable]
+  mode = ZB_MODE_5R6G5B;
+       ^
+SDL_Examples/model.c:387:8: style: Variable 'mode' is assigned a value that is never used. [unreadVariable]
+  mode = ZB_MODE_RGB24;
+       ^
+SDL_Examples/model.c:391:8: style: Variable 'mode' is assigned a value that is never used. [unreadVariable]
+  mode = ZB_MODE_RGBA;
+       ^
+SDL_Examples/model.c:437:11: style: Variable 't' is assigned a value that is never used. [unreadVariable]
+ double t = 0;
+          ^
+SDL_Examples/model.c:444:11: style: Variable 'm' is assigned a value that is never used. [unreadVariable]
+  model m = initmodel();
+          ^
+SDL_Examples/model.c:532:5: style: Variable 't' is assigned a value that is never used. [unreadVariable]
+  t += 0.016666f;
+    ^
+SDL_Examples/texture.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 30 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+SDL_Examples/texture.c:338:4: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+   printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f,
+   ^
+SDL_Examples/texture.c:344:2: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ printf("%i frames in %f secs, %f frames per second.\n", frames, (float)(tNow - tLastFps) * 0.001f, (float)frames * 1000.0f / (float)(tNow - tLastFps));
+ ^
+src/zgl.h:376:18: style:inconclusive: Boolean expression 'x<-w' is used in bitwise operation. Did you mean '||'? [bitwiseOnBoolean]
+ return (x < -w) | ((x > w) << 1) | ((y < -w) << 2) | ((y > w) << 3) | ((z < -w) << 4) | ((z > w) << 5);
+                 ^
+src/api.c:195:21: style:inconclusive: Function 'glEnable' argument 1 names different: declaration 'code' definition 'cap'. [funcArgNamesDifferent]
+void glEnable(GLint cap) {
+                    ^
+include/GL/gl.h:774:21: note: Function 'glEnable' argument 1 names different: declaration 'code' definition 'cap'.
+void glEnable(GLint code);
+                    ^
+src/api.c:195:21: note: Function 'glEnable' argument 1 names different: declaration 'code' definition 'cap'.
+void glEnable(GLint cap) {
+                    ^
+src/api.c:205:22: style:inconclusive: Function 'glDisable' argument 1 names different: declaration 'code' definition 'cap'. [funcArgNamesDifferent]
+void glDisable(GLint cap) {
+                     ^
+include/GL/gl.h:775:22: note: Function 'glDisable' argument 1 names different: declaration 'code' definition 'cap'.
+void glDisable(GLint code);
+                     ^
+src/api.c:205:22: note: Function 'glDisable' argument 1 names different: declaration 'code' definition 'cap'.
+void glDisable(GLint cap) {
+                     ^
+src/api.c:217:20: style:inconclusive: Function 'glBegin' argument 1 names different: declaration 'type' definition 'mode'. [funcArgNamesDifferent]
+void glBegin(GLint mode) {
+                   ^
+include/GL/gl.h:782:20: note: Function 'glBegin' argument 1 names different: declaration 'type' definition 'mode'.
+void glBegin(GLint type);
+                   ^
+src/api.c:217:20: note: Function 'glBegin' argument 1 names different: declaration 'type' definition 'mode'.
+void glBegin(GLint mode) {
+                   ^
+src/api.c:347:102: style:inconclusive: Function 'glFrustum' argument 6 names different: declaration 'far' definition 'farv'. [funcArgNamesDifferent]
+void glFrustum(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble near, GLdouble farv) {
+                                                                                                     ^
+include/GL/gl.h:857:39: note: Function 'glFrustum' argument 6 names different: declaration 'far' definition 'farv'.
+               GLdouble near,GLdouble far);
+                                      ^
+src/api.c:347:102: note: Function 'glFrustum' argument 6 names different: declaration 'far' definition 'farv'.
+void glFrustum(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble near, GLdouble farv) {
+                                                                                                     ^
+src/arrays.c:92:12: warning: Either the condition '!(s->buffers[handle])' is redundant or there is possible null pointer dereference: s->buffers[handle]. [nullPointerRedundantCheck]
+ s->buffers[handle]->data = NULL;
+           ^
+src/arrays.c:83:6: note: Assuming that condition '!(s->buffers[handle])' is not redundant
+ if (!(s->buffers[handle])) {
+     ^
+src/arrays.c:92:12: note: Null pointer dereference
+ s->buffers[handle]->data = NULL;
+           ^
+src/arrays.c:93:12: warning: Either the condition '!(s->buffers[handle])' is redundant or there is possible null pointer dereference: s->buffers[handle]. [nullPointerRedundantCheck]
+ s->buffers[handle]->size = 0;
+           ^
+src/arrays.c:83:6: note: Assuming that condition '!(s->buffers[handle])' is not redundant
+ if (!(s->buffers[handle])) {
+     ^
+src/arrays.c:93:12: note: Null pointer dereference
+ s->buffers[handle]->size = 0;
+           ^
+src/arrays.c:129:15: style: Variable 'c' is assigned a value that is never used. [unreadVariable]
+ GLContext* c = gl_get_context();
+              ^
+src/clip.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 13 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/clip.c:236:19: style: The scope of the variable 'front' can be reduced. [variableScope]
+ GLint co, cc[3], front;
+                  ^
+src/clip.c:144:29: warning: Function 'gl_draw_line' argument order different: declaration 'p0, p1' definition 'p1, p2' [funcArgOrderDifferent]
+void gl_draw_line(GLVertex* p1, GLVertex* p2) {
+                            ^
+src/zgl.h:412:29: note: Function 'gl_draw_line' argument order different: declaration 'p0, p1' definition 'p1, p2'
+void gl_draw_line(GLVertex* p0, GLVertex* p1);
+                            ^
+src/clip.c:144:29: note: Function 'gl_draw_line' argument order different: declaration 'p0, p1' definition 'p1, p2'
+void gl_draw_line(GLVertex* p1, GLVertex* p2) {
+                            ^
+src/clip.c:211:15: style: Variable 'c' is assigned a value that is never used. [unreadVariable]
+ GLContext* c = gl_get_context();
+              ^
+src/get.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 35 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/image_util.c:52:10: style: The scope of the variable 'x1' can be reduced. [variableScope]
+ GLfloat x1, y1, x1inc, y1inc;
+         ^
+src/image_util.c:98:8: style: The scope of the variable 'x1' can be reduced. [variableScope]
+ GLint x1, y1, x1inc, y1inc;
+       ^
+src/init.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 15 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/init.c:82:24: style: Condition '((int)255<<8)!=65280' is always false [knownConditionTrueFalse]
+ if (((GLint)255 << 8) != 65280)
+                       ^
+src/init.c:84:24: style: Condition '(int)65280>>8!=255' is always false [knownConditionTrueFalse]
+ if ((GLint)65280 >> 8 != 255)
+                       ^
+src/init.c:88:25: style: Condition '((unsigned int)255<<8)!=65280' is always false [knownConditionTrueFalse]
+ if (((GLuint)255 << 8) != 65280)
+                        ^
+src/init.c:90:25: style: Condition '(unsigned int)65280>>8!=255' is always false [knownConditionTrueFalse]
+ if ((GLuint)65280 >> 8 != 255)
+                        ^
+src/init.c:92:27: style: Condition '((unsigned short)255<<8)!=65280' is always false [knownConditionTrueFalse]
+ if (((GLushort)255 << 8) != 65280)
+                          ^
+src/init.c:94:27: style: Condition '(unsigned short)65280>>8!=255' is always false [knownConditionTrueFalse]
+ if ((GLushort)65280 >> 8 != 255)
+                          ^
+src/init.c:96:26: style: Condition '((short)255<<8)!=65280' is always false [knownConditionTrueFalse]
+ if (((GLshort)255 << 8) != 65280)
+                         ^
+src/init.c:165:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->zb = zbuffer;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:165:2: note: Null pointer dereference
+ c->zb = zbuffer;
+ ^
+src/init.c:181:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->drawbuffer = GL_FRONT;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:181:2: note: Null pointer dereference
+ c->drawbuffer = GL_FRONT;
+ ^
+src/init.c:182:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->readbuffer = GL_FRONT;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:182:2: note: Null pointer dereference
+ c->readbuffer = GL_FRONT;
+ ^
+src/init.c:186:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->textsize = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:186:2: note: Null pointer dereference
+ c->textsize = 1;
+ ^
+src/init.c:188:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->boundarraybuffer = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:188:2: note: Null pointer dereference
+ c->boundarraybuffer = 0;
+ ^
+src/init.c:189:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->boundvertexbuffer = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:189:2: note: Null pointer dereference
+ c->boundvertexbuffer = 0;
+ ^
+src/init.c:190:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->boundcolorbuffer = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:190:2: note: Null pointer dereference
+ c->boundcolorbuffer = 0;
+ ^
+src/init.c:191:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->boundnormalbuffer = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:191:2: note: Null pointer dereference
+ c->boundnormalbuffer = 0;
+ ^
+src/init.c:192:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->boundtexcoordbuffer = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:192:2: note: Null pointer dereference
+ c->boundtexcoordbuffer = 0;
+ ^
+src/init.c:195:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->exec_flag = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:195:2: note: Null pointer dereference
+ c->exec_flag = 1;
+ ^
+src/init.c:196:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->compile_flag = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:196:2: note: Null pointer dereference
+ c->compile_flag = 0;
+ ^
+src/init.c:197:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->print_flag = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:197:2: note: Null pointer dereference
+ c->print_flag = 0;
+ ^
+src/init.c:198:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->listbase = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:198:2: note: Null pointer dereference
+ c->listbase = 0;
+ ^
+src/init.c:199:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->in_begin = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:199:2: note: Null pointer dereference
+ c->in_begin = 0;
+ ^
+src/init.c:218:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->first_light = NULL;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:218:2: note: Null pointer dereference
+ c->first_light = NULL;
+ ^
+src/init.c:219:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->ambient_light_model = gl_V4_New(0.2, 0.2, 0.2, 1);
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:219:2: note: Null pointer dereference
+ c->ambient_light_model = gl_V4_New(0.2, 0.2, 0.2, 1);
+ ^
+src/init.c:220:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->local_light_model = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:220:2: note: Null pointer dereference
+ c->local_light_model = 0;
+ ^
+src/init.c:221:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->lighting_enabled = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:221:2: note: Null pointer dereference
+ c->lighting_enabled = 0;
+ ^
+src/init.c:222:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->light_model_two_side = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:222:2: note: Null pointer dereference
+ c->light_model_two_side = 0;
+ ^
+src/init.c:233:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_color_material_mode = GL_FRONT_AND_BACK;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:233:2: note: Null pointer dereference
+ c->current_color_material_mode = GL_FRONT_AND_BACK;
+ ^
+src/init.c:234:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_color_material_type = GL_AMBIENT_AND_DIFFUSE;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:234:2: note: Null pointer dereference
+ c->current_color_material_type = GL_AMBIENT_AND_DIFFUSE;
+ ^
+src/init.c:235:2: warning: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->color_material_enabled = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:235:2: note: Null pointer dereference
+ c->color_material_enabled = 0;
+ ^
+src/init.c:241:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->zb->enable_blend = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:241:2: note: Null pointer dereference
+ c->zb->enable_blend = 0;
+ ^
+src/init.c:242:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->zb->sfactor = GL_ONE;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:242:2: note: Null pointer dereference
+ c->zb->sfactor = GL_ONE;
+ ^
+src/init.c:243:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->zb->dfactor = GL_ZERO;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:243:2: note: Null pointer dereference
+ c->zb->dfactor = GL_ZERO;
+ ^
+src/init.c:244:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->zb->blendeq = GL_FUNC_ADD;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:244:2: note: Null pointer dereference
+ c->zb->blendeq = GL_FUNC_ADD;
+ ^
+src/init.c:247:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_color.X = 1.0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:247:2: note: Null pointer dereference
+ c->current_color.X = 1.0;
+ ^
+src/init.c:248:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_color.Y = 1.0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:248:2: note: Null pointer dereference
+ c->current_color.Y = 1.0;
+ ^
+src/init.c:249:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_color.Z = 1.0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:249:2: note: Null pointer dereference
+ c->current_color.Z = 1.0;
+ ^
+src/init.c:250:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_color.W = 0.0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:250:2: note: Null pointer dereference
+ c->current_color.W = 0.0;
+ ^
+src/init.c:252:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_normal.X = 1.0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:252:2: note: Null pointer dereference
+ c->current_normal.X = 1.0;
+ ^
+src/init.c:253:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_normal.Y = 0.0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:253:2: note: Null pointer dereference
+ c->current_normal.Y = 0.0;
+ ^
+src/init.c:254:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_normal.Z = 0.0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:254:2: note: Null pointer dereference
+ c->current_normal.Z = 0.0;
+ ^
+src/init.c:255:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_normal.W = 0.0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:255:2: note: Null pointer dereference
+ c->current_normal.W = 0.0;
+ ^
+src/init.c:257:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_edge_flag = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:257:2: note: Null pointer dereference
+ c->current_edge_flag = 1;
+ ^
+src/init.c:259:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_tex_coord.X = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:259:2: note: Null pointer dereference
+ c->current_tex_coord.X = 0;
+ ^
+src/init.c:260:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_tex_coord.Y = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:260:2: note: Null pointer dereference
+ c->current_tex_coord.Y = 0;
+ ^
+src/init.c:261:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_tex_coord.Z = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:261:2: note: Null pointer dereference
+ c->current_tex_coord.Z = 0;
+ ^
+src/init.c:262:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_tex_coord.W = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:262:2: note: Null pointer dereference
+ c->current_tex_coord.W = 1;
+ ^
+src/init.c:264:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->polygon_mode_front = GL_FILL;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:264:2: note: Null pointer dereference
+ c->polygon_mode_front = GL_FILL;
+ ^
+src/init.c:265:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->polygon_mode_back = GL_FILL;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:265:2: note: Null pointer dereference
+ c->polygon_mode_back = GL_FILL;
+ ^
+src/init.c:267:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_front_face = 0; /* 0 = GL_CCW  1 = GL_CW */
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:267:2: note: Null pointer dereference
+ c->current_front_face = 0; /* 0 = GL_CCW  1 = GL_CW */
+ ^
+src/init.c:268:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_cull_face = GL_BACK;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:268:2: note: Null pointer dereference
+ c->current_cull_face = GL_BACK;
+ ^
+src/init.c:269:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->current_shade_model = GL_SMOOTH;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:269:2: note: Null pointer dereference
+ c->current_shade_model = GL_SMOOTH;
+ ^
+src/init.c:270:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->cull_face_enabled = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:270:2: note: Null pointer dereference
+ c->cull_face_enabled = 0;
+ ^
+src/init.c:278:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->clear_color.v[0] = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:278:2: note: Null pointer dereference
+ c->clear_color.v[0] = 0;
+ ^
+src/init.c:279:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->clear_color.v[1] = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:279:2: note: Null pointer dereference
+ c->clear_color.v[1] = 0;
+ ^
+src/init.c:280:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->clear_color.v[2] = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:280:2: note: Null pointer dereference
+ c->clear_color.v[2] = 0;
+ ^
+src/init.c:281:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->clear_color.v[3] = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:281:2: note: Null pointer dereference
+ c->clear_color.v[3] = 0;
+ ^
+src/init.c:282:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->clear_depth = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:282:2: note: Null pointer dereference
+ c->clear_depth = 0;
+ ^
+src/init.c:298:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->matrix_mode = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:298:2: note: Null pointer dereference
+ c->matrix_mode = 0;
+ ^
+src/init.c:300:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->matrix_stack_depth_max[0] = MAX_MODELVIEW_STACK_DEPTH;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:300:2: note: Null pointer dereference
+ c->matrix_stack_depth_max[0] = MAX_MODELVIEW_STACK_DEPTH;
+ ^
+src/init.c:301:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->matrix_stack_depth_max[1] = MAX_PROJECTION_STACK_DEPTH;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:301:2: note: Null pointer dereference
+ c->matrix_stack_depth_max[1] = MAX_PROJECTION_STACK_DEPTH;
+ ^
+src/init.c:302:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->matrix_stack_depth_max[2] = MAX_TEXTURE_STACK_DEPTH;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:302:2: note: Null pointer dereference
+ c->matrix_stack_depth_max[2] = MAX_TEXTURE_STACK_DEPTH;
+ ^
+src/init.c:318:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->matrix_model_projection_updated = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:318:2: note: Null pointer dereference
+ c->matrix_model_projection_updated = 1;
+ ^
+src/init.c:321:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->client_states = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:321:2: note: Null pointer dereference
+ c->client_states = 0;
+ ^
+src/init.c:324:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->offset_states = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:324:2: note: Null pointer dereference
+ c->offset_states = 0;
+ ^
+src/init.c:327:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->gl_resize_viewport = NULL;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:327:2: note: Null pointer dereference
+ c->gl_resize_viewport = NULL;
+ ^
+src/init.c:335:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->zEnableSpecular = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:335:2: note: Null pointer dereference
+ c->zEnableSpecular = 0;
+ ^
+src/init.c:337:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->zb->depth_test = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:337:2: note: Null pointer dereference
+ c->zb->depth_test = 0;
+ ^
+src/init.c:338:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->zb->depth_write = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:338:2: note: Null pointer dereference
+ c->zb->depth_write = 1;
+ ^
+src/init.c:339:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->zb->pointsize = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:339:2: note: Null pointer dereference
+ c->zb->pointsize = 1;
+ ^
+src/init.c:342:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->rasterpos.X = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:342:2: note: Null pointer dereference
+ c->rasterpos.X = 0;
+ ^
+src/init.c:343:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->rasterpos.Y = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:343:2: note: Null pointer dereference
+ c->rasterpos.Y = 0;
+ ^
+src/init.c:344:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->rasterpos.Z = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:344:2: note: Null pointer dereference
+ c->rasterpos.Z = 0;
+ ^
+src/init.c:345:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->rasterpos.W = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:345:2: note: Null pointer dereference
+ c->rasterpos.W = 1;
+ ^
+src/init.c:347:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->rastervertex.pc.X = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:347:2: note: Null pointer dereference
+ c->rastervertex.pc.X = 0;
+ ^
+src/init.c:348:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->rastervertex.pc.Y = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:348:2: note: Null pointer dereference
+ c->rastervertex.pc.Y = 0;
+ ^
+src/init.c:349:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->rastervertex.pc.Z = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:349:2: note: Null pointer dereference
+ c->rastervertex.pc.Z = 0;
+ ^
+src/init.c:350:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->rastervertex.pc.W = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:350:2: note: Null pointer dereference
+ c->rastervertex.pc.W = 1;
+ ^
+src/init.c:351:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->rasterposvalid = 0;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:351:2: note: Null pointer dereference
+ c->rasterposvalid = 0;
+ ^
+src/init.c:352:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->pzoomx = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:352:2: note: Null pointer dereference
+ c->pzoomx = 1;
+ ^
+src/init.c:353:2: warning:inconclusive: Either the condition '!c' is redundant or there is possible null pointer dereference: c. [nullPointerRedundantCheck]
+ c->pzoomy = 1;
+ ^
+src/init.c:162:6: note: Assuming that condition '!c' is not redundant
+ if (!c)
+     ^
+src/init.c:353:2: note: Null pointer dereference
+ c->pzoomy = 1;
+ ^
+src/init.c:43:16: style: The scope of the variable 'ht' can be reduced. [variableScope]
+   GLTexture** ht;
+               ^
+src/init.c:86:18: portability: Shifting a negative value is technically undefined behaviour [shiftNegativeLHS]
+ if (((GLint)-1) >> 14 != -1)
+                 ^
+src/init.c:98:21: portability: Shifting a negative value is technically undefined behaviour [shiftNegativeLHS]
+ if ((GLshort)65280 >> 8 != -1)
+                    ^
+src/init.c:151:19: style:inconclusive: Function 'glInit' argument 1 names different: declaration 'zbuffer' definition 'zbuffer1'. [funcArgNamesDifferent]
+void glInit(void* zbuffer1) {
+                  ^
+include/GL/gl.h:1010:19: note: Function 'glInit' argument 1 names different: declaration 'zbuffer' definition 'zbuffer1'.
+void glInit(void *zbuffer);
+                  ^
+src/init.c:151:19: note: Function 'glInit' argument 1 names different: declaration 'zbuffer' definition 'zbuffer1'.
+void glInit(void* zbuffer1) {
+                  ^
+src/init.c:74:15: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+ GLint t2 = 1 << 31;
+              ^
+src/init.c:74:15: error: Signed integer overflow for expression '1<<31'. [integerOverflow]
+ GLint t2 = 1 << 31;
+              ^
+src/init.c:363:4: style: Variable 'i' is assigned a value that is never used. [unreadVariable]
+ i = 0;
+   ^
+src/light.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 14 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/list.c:246:26: warning: Either the condition 'l==NULL' is redundant or there is possible null pointer dereference: l. [nullPointerRedundantCheck]
+  c->current_op_buffer = l->first_op_buffer;
+                         ^
+src/list.c:243:8: note: Assuming that condition 'l==NULL' is not redundant
+ if (l == NULL)
+       ^
+src/list.c:246:26: note: Null pointer dereference
+  c->current_op_buffer = l->first_op_buffer;
+                         ^
+src/matrix.c:131:53: style:inconclusive: Boolean expression 'u[2]!=0' is used in bitwise operation. Did you mean '||'? [bitwiseOnBoolean]
+ dir_code = ((u[0] != 0) << 2) | ((u[1] != 0) << 1) | (u[2] != 0);
+                                                    ^
+src/msghandling.c:60:2: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+ va_end(ap);
+ ^
+src/msghandling.c:18:30: style:inconclusive: Function 'tgl_warning' argument 1 names different: declaration 'text' definition 'format'. [funcArgNamesDifferent]
+void tgl_warning(const char* format, ...) {
+                             ^
+src/msghandling.h:4:37: note: Function 'tgl_warning' argument 1 names different: declaration 'text' definition 'format'.
+extern void tgl_warning(const char* text, ...);
+                                    ^
+src/msghandling.c:18:30: note: Function 'tgl_warning' argument 1 names different: declaration 'text' definition 'format'.
+void tgl_warning(const char* format, ...) {
+                             ^
+src/msghandling.c:29:28: style:inconclusive: Function 'tgl_trace' argument 1 names different: declaration 'text' definition 'format'. [funcArgNamesDifferent]
+void tgl_trace(const char* format, ...) {
+                           ^
+src/msghandling.h:5:35: note: Function 'tgl_trace' argument 1 names different: declaration 'text' definition 'format'.
+extern void tgl_trace(const char* text, ...);
+                                  ^
+src/msghandling.c:29:28: note: Function 'tgl_trace' argument 1 names different: declaration 'text' definition 'format'.
+void tgl_trace(const char* format, ...) {
+                           ^
+src/msghandling.c:42:28: style:inconclusive: Function 'tgl_fixme' argument 1 names different: declaration 'text' definition 'format'. [funcArgNamesDifferent]
+void tgl_fixme(const char* format, ...) {
+                           ^
+src/msghandling.h:6:35: note: Function 'tgl_fixme' argument 1 names different: declaration 'text' definition 'format'.
+extern void tgl_fixme(const char* text, ...);
+                                  ^
+src/msghandling.c:42:28: note: Function 'tgl_fixme' argument 1 names different: declaration 'text' definition 'format'.
+void tgl_fixme(const char* format, ...) {
+                           ^
+src/select.c:4:15: style: Variable 'c' is assigned a value that is never used. [unreadVariable]
+ GLContext* c = gl_get_context();
+              ^
+src/select.c:5:15: style: Variable 'result' is assigned a value that is never used. [unreadVariable]
+ GLint result = 0;
+              ^
+src/texture.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 14 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/texture.c:145:17: style: Redundant condition: If 'EXPR', the comparison 't != 0' is always true. [redundantCondition]
+  if (t != NULL && t != 0) {
+                ^
+src/texture.c:308:6: style: Condition 'do_free' is always true [knownConditionTrueFalse]
+ if (do_free)
+     ^
+src/texture.c:291:13: note: Assignment 'do_free=1', assigned value is 1
+  do_free = 1;
+            ^
+src/texture.c:308:6: note: Condition 'do_free' is always true
+ if (do_free)
+     ^
+src/texture.c:101:2: warning: Either the condition '!t' is redundant or there is possible null pointer dereference: t. [nullPointerRedundantCheck]
+ t->next = *ht;
+ ^
+src/texture.c:90:6: note: Assuming that condition '!t' is not redundant
+ if (!t)
+     ^
+src/texture.c:101:2: note: Null pointer dereference
+ t->next = *ht;
+ ^
+src/texture.c:102:2: warning: Either the condition '!t' is redundant or there is possible null pointer dereference: t. [nullPointerRedundantCheck]
+ t->prev = NULL;
+ ^
+src/texture.c:90:6: note: Assuming that condition '!t' is not redundant
+ if (!t)
+     ^
+src/texture.c:102:2: note: Null pointer dereference
+ t->prev = NULL;
+ ^
+src/texture.c:103:6: warning: Either the condition '!t' is redundant or there is possible null pointer dereference: t. [nullPointerRedundantCheck]
+ if (t->next != NULL)
+     ^
+src/texture.c:90:6: note: Assuming that condition '!t' is not redundant
+ if (!t)
+     ^
+src/texture.c:103:6: note: Null pointer dereference
+ if (t->next != NULL)
+     ^
+src/texture.c:107:2: warning: Either the condition '!t' is redundant or there is possible null pointer dereference: t. [nullPointerRedundantCheck]
+ t->handle = h;
+ ^
+src/texture.c:90:6: note: Assuming that condition '!t' is not redundant
+ if (!t)
+     ^
+src/texture.c:107:2: note: Null pointer dereference
+ t->handle = h;
+ ^
+src/texture.c:69:18: style: The scope of the variable 'ht' can be reduced. [variableScope]
+ GLTexture *t, **ht;
+                 ^
+src/texture.c:140:13: style: The scope of the variable 't' can be reduced. [variableScope]
+ GLTexture* t;
+            ^
+src/texture.c:35:15: style: Variable 'c' is assigned a value that is never used. [unreadVariable]
+ GLContext* c = gl_get_context();
+              ^
+src/texture.c:45:15: style: Variable 'c' is assigned a value that is never used. [unreadVariable]
+ GLContext* c = gl_get_context();
+              ^
+src/texture.c:156:15: style: Variable 'target' is assigned a value that is never used. [unreadVariable]
+ GLint target = p[1].i;
+              ^
+src/zbuffer.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 18 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/zbuffer.c:118:11: style: Unused variable: i [unusedVariable]
+ GLint y, i;
+          ^
+src/zline.c:29:5: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+    TGL_BLEND_FUNC_RGB(p->r, p->g, p->b, (*pp))
+    ^
+src/zline.c:57:7: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+      TGL_BLEND_FUNC_RGB(p->r, p->g, p->b, (*pp))
+      ^
+src/zmath.c:71:31: style:inconclusive: Function 'gl_M4_MulLeft' argument 2 names different: declaration 'a' definition 'b'. [funcArgNamesDifferent]
+void gl_M4_MulLeft(M4* c, M4* b) {
+                              ^
+src/zmath.h:46:31: note: Function 'gl_M4_MulLeft' argument 2 names different: declaration 'a' definition 'b'.
+void gl_M4_MulLeft(M4* c, M4* a);
+                              ^
+src/zmath.c:71:31: note: Function 'gl_M4_MulLeft' argument 2 names different: declaration 'a' definition 'b'.
+void gl_M4_MulLeft(M4* c, M4* b) {
+                              ^
+src/zmath.c:244:23: style:inconclusive: Function 'gl_M4_Rotate' argument 1 names different: declaration 'c' definition 'a'. [funcArgNamesDifferent]
+void gl_M4_Rotate(M4* a, GLfloat t, GLint u) {
+                      ^
+src/zmath.h:48:23: note: Function 'gl_M4_Rotate' argument 1 names different: declaration 'c' definition 'a'.
+void gl_M4_Rotate(M4* c, GLfloat t, GLint u);
+                      ^
+src/zmath.c:244:23: note: Function 'gl_M4_Rotate' argument 1 names different: declaration 'c' definition 'a'.
+void gl_M4_Rotate(M4* a, GLfloat t, GLint u) {
+                      ^
+src/zraster.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 17 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/ztext.c:51:43: style:inconclusive: Function 'glPlotPixel' argument 3 names different: declaration 'pixel' definition 'pix'. [funcArgNamesDifferent]
+void glPlotPixel(GLint x, GLint y, GLuint pix) {
+                                          ^
+include/GL/gl.h:802:43: note: Function 'glPlotPixel' argument 3 names different: declaration 'pixel' definition 'pix'.
+void glPlotPixel(GLint x, GLint y, GLuint pixel);
+                                          ^
+src/ztext.c:51:43: note: Function 'glPlotPixel' argument 3 names different: declaration 'pixel' definition 'pix'.
+void glPlotPixel(GLint x, GLint y, GLuint pix) {
+                                          ^
+src/ztext.c:69:63: style:inconclusive: Function 'glDrawText' argument 4 names different: declaration 'pixel' definition 'p'. [funcArgNamesDifferent]
+void glDrawText(const GLubyte* text, GLint x, GLint y, GLuint p) {
+                                                              ^
+include/GL/gl.h:800:63: note: Function 'glDrawText' argument 4 names different: declaration 'pixel' definition 'p'.
+void glDrawText(const GLubyte* text, GLint x, GLint y, GLuint pixel);
+                                                              ^
+src/ztext.c:69:63: note: Function 'glDrawText' argument 4 names different: declaration 'pixel' definition 'p'.
+void glDrawText(const GLubyte* text, GLint x, GLint y, GLuint p) {
+                                                              ^
+src/ztriangle.h:326:6: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+     PUT_PIXEL(0); /*the_x++;*/
+     ^
+src/ztriangle.h:327:6: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+     PUT_PIXEL(1); /*the_x++;*/
+     ^
+src/ztriangle.h:328:6: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+     PUT_PIXEL(2); /*the_x++;*/
+     ^
+src/ztriangle.h:329:6: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+     PUT_PIXEL(3); /*the_x++;*/
+     ^
+src/ztriangle.h:338:6: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+     PUT_PIXEL(0); /*the_x++;*/
+     ^
+src/ztriangle.h:349:4: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+   DRAW_LINE();
+   ^
+src/ztriangle.c:50:9: style: The scope of the variable 'color' can be reduced. [variableScope]
+ GLuint color;
+        ^
+src/ztriangle.c:47:35: warning: Function 'ZB_fillTriangleFlat' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2' [funcArgOrderDifferent]
+void ZB_fillTriangleFlat(ZBuffer* zb, ZBufferPoint* p0, ZBufferPoint* p1, ZBufferPoint* p2) {
+                                  ^
+include/zbuffer.h:322:35: note: Function 'ZB_fillTriangleFlat' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2'
+void ZB_fillTriangleFlat(ZBuffer *zb,
+                                  ^
+src/ztriangle.c:47:35: note: Function 'ZB_fillTriangleFlat' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2'
+void ZB_fillTriangleFlat(ZBuffer* zb, ZBufferPoint* p0, ZBufferPoint* p1, ZBufferPoint* p2) {
+                                  ^
+src/ztriangle.c:81:42: warning: Function 'ZB_fillTriangleFlatNOBLEND' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2' [funcArgOrderDifferent]
+void ZB_fillTriangleFlatNOBLEND(ZBuffer* zb, ZBufferPoint* p0, ZBufferPoint* p1, ZBufferPoint* p2) {
+                                         ^
+include/zbuffer.h:325:42: note: Function 'ZB_fillTriangleFlatNOBLEND' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2'
+void ZB_fillTriangleFlatNOBLEND(ZBuffer *zb,
+                                         ^
+src/ztriangle.c:81:42: note: Function 'ZB_fillTriangleFlatNOBLEND' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2'
+void ZB_fillTriangleFlatNOBLEND(ZBuffer* zb, ZBufferPoint* p0, ZBufferPoint* p1, ZBufferPoint* p2) {
+                                         ^
+src/ztriangle.c:116:37: warning: Function 'ZB_fillTriangleSmooth' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2' [funcArgOrderDifferent]
+void ZB_fillTriangleSmooth(ZBuffer* zb, ZBufferPoint* p0, ZBufferPoint* p1, ZBufferPoint* p2) {
+                                    ^
+include/zbuffer.h:329:37: note: Function 'ZB_fillTriangleSmooth' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2'
+void ZB_fillTriangleSmooth(ZBuffer *zb,
+                                    ^
+src/ztriangle.c:116:37: note: Function 'ZB_fillTriangleSmooth' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2'
+void ZB_fillTriangleSmooth(ZBuffer* zb, ZBufferPoint* p0, ZBufferPoint* p1, ZBufferPoint* p2) {
+                                    ^
+src/ztriangle.c:176:44: warning: Function 'ZB_fillTriangleSmoothNOBLEND' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2' [funcArgOrderDifferent]
+void ZB_fillTriangleSmoothNOBLEND(ZBuffer* zb, ZBufferPoint* p0, ZBufferPoint* p1, ZBufferPoint* p2) {
+                                           ^
+include/zbuffer.h:332:44: note: Function 'ZB_fillTriangleSmoothNOBLEND' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2'
+void ZB_fillTriangleSmoothNOBLEND(ZBuffer *zb,
+                                           ^
+src/ztriangle.c:176:44: note: Function 'ZB_fillTriangleSmoothNOBLEND' argument order different: declaration 'zb, p1, p2, p3' definition 'zb, p0, p1, p2'
+void ZB_fillTriangleSmoothNOBLEND(ZBuffer* zb, ZBufferPoint* p0, ZBufferPoint* p1, ZBufferPoint* p2) {
+                                           ^
+src/api.c:20:43: error: Null pointer dereference: v [ctunullpointer]
+void glVertex3fv(GLfloat* v) { glVertex4f(v[0], v[1], v[2], 1); }
+                                          ^
+SDL_Examples/helloworld.c:51:12: note: Calling function glVertex3f, 1st argument is null
+ glVertex3f(0, 1.2, 0.2);
+           ^
+src/api.c:20:43: note: Dereferencing argument v that is null
+void glVertex3fv(GLfloat* v) { glVertex4f(v[0], v[1], v[2], 1); }
+                                          ^
+src/api.c:78:41: error: Null pointer dereference: v [ctunullpointer]
+void glColor3fv(GLfloat* v) { glColor4f(v[0], v[1], v[2], 1); }
+                                        ^
+SDL_Examples/model.c:596:14: note: Calling function glColor3f, 1st argument is null
+    glColor3f(0, 1, 0);
+             ^
+src/api.c:78:41: note: Dereferencing argument v that is null
+void glColor3fv(GLfloat* v) { glColor4f(v[0], v[1], v[2], 1); }
+                                        ^
+src/api.c:96:47: error: Null pointer dereference: v [ctunullpointer]
+void glTexCoord2fv(GLfloat* v) { glTexCoord4f(v[0], v[1], 0, 1); }
+                                              ^
+SDL_Examples/menu.c:76:14: note: Calling function glTexCoord2f, 1st argument is null
+ glTexCoord2f(0, 0);
+             ^
+src/api.c:96:47: note: Dereferencing argument v that is null
+void glTexCoord2fv(GLfloat* v) { glTexCoord4f(v[0], v[1], 0, 1); }
+                                              ^
+src/zbuffer.c:77:0: style: The function 'ZB_resize' is never used. [unusedFunction]
+
+^
+SDL_Examples/model.c:147:0: style: The function 'drawModelArrays' is never used. [unusedFunction]
+
+^
+src/ztriangle.c:9:0: style: The function 'edgeFunction' is never used. [unusedFunction]
+
+^
+src/arrays.c:62:0: style: The function 'get_buffer' is never used. [unusedFunction]
+
+^
+src/texture.c:19:0: style: The function 'glAreTexturesResident' is never used. [unusedFunction]
+
+^
+src/list.c:121:0: style: The function 'glCallLists' is never used. [unusedFunction]
+
+^
+src/api.c:61:0: style: The function 'glColor4fv' is never used. [unusedFunction]
+
+^
+src/api.c:644:0: style: The function 'glDebug' is never used. [unusedFunction]
+
+^
+src/arrays.c:127:0: style: The function 'glDeleteBuffers' is never used. [unusedFunction]
+
+^
+src/arrays.c:361:0: style: The function 'glDrawArrays' is never used. [unusedFunction]
+
+^
+src/misc.c:207:0: style: The function 'glDrawBuffer' is never used. [unusedFunction]
+
+^
+src/api.c:98:0: style: The function 'glEdgeFlag' is never used. [unusedFunction]
+
+^
+src/select.c:105:0: style: The function 'glFeedbackBuffer' is never used. [unusedFunction]
+
+^
+src/misc.c:259:0: style: The function 'glFinish' is never used. [unusedFunction]
+
+^
+src/api.c:635:0: style: The function 'glFlush' is never used. [unusedFunction]
+
+^
+src/api.c:151:0: style: The function 'glFrontFace' is never used. [unusedFunction]
+
+^
+src/misc.c:195:0: style: The function 'glGetError' is never used. [unusedFunction]
+
+^
+src/get.c:580:0: style: The function 'glGetFloatv' is never used. [unusedFunction]
+
+^
+src/get.c:173:0: style: The function 'glGetIntegerv' is never used. [unusedFunction]
+
+^
+src/api.c:582:0: style: The function 'glInitNames' is never used. [unusedFunction]
+
+^
+src/arrays.c:56:0: style: The function 'glIsBuffer' is never used. [unusedFunction]
+
+^
+src/list.c:273:0: style: The function 'glIsList' is never used. [unusedFunction]
+
+^
+src/texture.c:34:0: style: The function 'glIsTexture' is never used. [unusedFunction]
+
+^
+src/api.c:453:0: style: The function 'glLightModelfv' is never used. [unusedFunction]
+
+^
+src/api.c:427:0: style: The function 'glLightf' is never used. [unusedFunction]
+
+^
+src/list.c:116:0: style: The function 'glListBase' is never used. [unusedFunction]
+
+^
+src/api.c:607:0: style: The function 'glLoadName' is never used. [unusedFunction]
+
+^
+src/api.c:389:0: style: The function 'glMaterialf' is never used. [unusedFunction]
+
+^
+src/api.c:43:0: style: The function 'glNormal3fv' is never used. [unusedFunction]
+
+^
+src/select.c:274:0: style: The function 'glPassThrough' is never used. [unusedFunction]
+
+^
+src/api.c:170:0: style: The function 'glPolygonMode' is never used. [unusedFunction]
+
+^
+src/api.c:616:0: style: The function 'glPolygonOffset' is never used. [unusedFunction]
+
+^
+src/api.c:599:0: style: The function 'glPopName' is never used. [unusedFunction]
+
+^
+src/api.c:590:0: style: The function 'glPushName' is never used. [unusedFunction]
+
+^
+src/zraster.c:70:0: style: The function 'glRasterPos2fv' is never used. [unusedFunction]
+
+^
+src/zraster.c:71:0: style: The function 'glRasterPos3fv' is never used. [unusedFunction]
+
+^
+src/zraster.c:72:0: style: The function 'glRasterPos4fv' is never used. [unusedFunction]
+
+^
+src/misc.c:236:0: style: The function 'glReadPixels' is never used. [unusedFunction]
+
+^
+src/select.c:3:0: style: The function 'glRenderMode' is never used. [unusedFunction]
+
+^
+src/api.c:324:0: style: The function 'glScalef' is never used. [unusedFunction]
+
+^
+src/select.c:85:0: style: The function 'glSelectBuffer' is never used. [unusedFunction]
+
+^
+src/api.c:96:0: style: The function 'glTexCoord2fv' is never used. [unusedFunction]
+
+^
+src/api.c:540:0: style: The function 'glTexEnvi' is never used. [unusedFunction]
+
+^
+src/api.c:20:0: style: The function 'glVertex3fv' is never used. [unusedFunction]
+
+^
+src/zmath.c:261:0: style: The function 'gl_M3_Inv' is never used. [unusedFunction]
+
+^
+src/zmath.c:142:0: style: The function 'gl_M4_InvOrtho' is never used. [unusedFunction]
+
+^
+src/zmath.c:93:0: style: The function 'gl_MoveV3' is never used. [unusedFunction]
+
+^
+src/zmath.c:101:0: style: The function 'gl_MulM3V3' is never used. [unusedFunction]
+
+^
+src/zmath.c:95:0: style: The function 'gl_MulM4V3' is never used. [unusedFunction]
+
+^
+src/select.c:322:0: style: The function 'gl_add_select' is never used. [unusedFunction]
+
+^
+src/image_util.c:7:0: style: The function 'gl_convertRGB_to_5R6G5B' is never used. [unusedFunction]
+
+^
+src/clip.c:391:0: style: The function 'gl_draw_triangle_feedback' is never used. [unusedFunction]
+
+^
+src/clip.c:390:0: style: The function 'gl_draw_triangle_select' is never used. [unusedFunction]
+
+^
+src/matrix.c:3:0: style: The function 'gl_print_matrix' is never used. [unusedFunction]
+
+^
+src/image_util.c:50:0: style: The function 'gl_resizeImage' is never used. [unusedFunction]
+
+^
+SDL_Examples/menu.c:136:0: style: The function 'omg_box' is never used. [unusedFunction]
+
+^
+src/zbuffer.c:108:0: style: The function 'pxReverse32' is never used. [unusedFunction]
+
+^
+src/memory.c:5:0: style: The function 'required_for_compilation_' is never used. [unusedFunction]
+
+^
+src/msghandling.c:42:0: style: The function 'tgl_fixme' is never used. [unusedFunction]
+
+^
+src/msghandling.c:29:0: style: The function 'tgl_trace' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
